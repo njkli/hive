@@ -59,13 +59,9 @@
         ];
 
       boot.kernelParams = lib.mkAfter [
-        # "i915.enable_dpcd_backlight=1"
+        "nomodeset" # GPD hardware quirk
         # "acpi_osi=!"
         # "acpi_osi=\"android\""
-        # "i915.modeset=0"
-        # "i915.modeset=1"
-        # "i915.enable_dpcd_backlight=1"
-        # "intel_idle.max_cstate=1"
       ];
 
       # enable_gvt=true reset=1

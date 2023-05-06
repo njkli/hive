@@ -9,7 +9,7 @@
   asbleg = {
     deployment.targetHost = "10.11.1.122";
     deployment.targetUser = "admin";
-    deployment.tags = [ "everything" ];
+    deployment.tags = [ "@desktop" "everything" ];
     inherit (cell.nixosConfigurations.asbleg) bee imports;
   };
 

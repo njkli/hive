@@ -42,7 +42,9 @@ in
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
-    "ca-derivations"
+    # https://github.com/NixOS/nix/issues/6666
+    # https://github.com/NixOS/nixpkgs/issues/177142
+    # BUG: "ca-derivations"
     "auto-allocate-uids"
     "cgroups"
     "recursive-nix"

@@ -1,0 +1,2 @@
+{ callFlake, ... }:
+callFlake ./utils { }

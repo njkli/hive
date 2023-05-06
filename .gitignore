@@ -1,0 +1,20 @@
+# direnv/direnv + divnix/std
+.std
+
+# numtide/devshell
+.data
+
+# nixos/nix
+result*
+
+# nixago: ignore-linked-files
+/treefmt.toml
+treefmt.toml
+# nixago-auto-created: mdbook-build-folder
+docs/book/**
+
+/.cache
+profiles/*.el
+
+profiles/doom-emacs/modules/private/my-code
+profiles/doom-emacs/modules/private/my-org

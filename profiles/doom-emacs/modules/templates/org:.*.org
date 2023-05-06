@@ -1,0 +1,4 @@
+#+TITLE: `(file-name-sans-extension (buffer-name))`
+#+AUTHOR: `user-full-name`
+#+EMAIL: `user-mail-address`
+#+DATE: `(format-time-string "%Y-%m-%d %a %H:%M")`

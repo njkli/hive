@@ -83,7 +83,7 @@
     bind D screen -t docker-stats 5 $SHELL -c docker-ps
     bind P screen -t -=top=- 2 ${pkgs.btop}/bin/btop
 
-    chdir $HOME/Projects/world
+    # chdir $HOME/Projects/world
     screen -t -=flake=- 0 $SHELL
     screen -t -=syslog=- 1 journalctl -fn -l -q
     chdir $HOME

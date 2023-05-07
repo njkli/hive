@@ -1,7 +1,8 @@
 { pkgs, lib, config, osConfig, ... }:
 let
   defaultPasswordStorePath = "${config.xdg.dataHome}/password-store";
-  isDesktop = with osConfig.services; xserver.displayManager.lightdm.enable && (pass-secret-service.enable || gnome.gnome-keyring.enable);
+  # FIXME: isDesktop = with osConfig.services; xserver.displayManager.lightdm.enable && (pass-secret-service.enable || gnome.gnome-keyring.enable);
+  isDesktop = with osConfig.services; xserver.displayManager.lightdm.enable && gnome.gnome-keyring.enable;
 in
 with lib;
 mkMerge [

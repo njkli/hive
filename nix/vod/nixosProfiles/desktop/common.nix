@@ -8,9 +8,9 @@
   }];
 
   imports = [
-    inputs.cells.bootstrap.nixosProfiles.core.kernel.binfmt
+    # inputs.cells.bootstrap.nixosProfiles.core.kernel.binfmt
     cell.nixosProfiles.fonts
-    cell.nixosProfiles.desktop.printer-kyocera
+    # cell.nixosProfiles.desktop.printer-kyocera
   ];
 
   services.xserver.displayManager.job.logToFile = false;
@@ -63,7 +63,7 @@
   };
 
   security.polkit.enable = true;
-  security.pam.services.login.enableGnomeKeyring = lib.mkForce false;
+  # security.pam.services.login.enableGnomeKeyring = lib.mkForce false;
 
   programs.nix-ld.enable = true;
   programs.droidcam.enable = true;
@@ -90,7 +90,7 @@
   services.udisks2.enable = true;
   services.accounts-daemon.enable = true;
   services.packagekit.enable = true;
-  services.gnome.gnome-keyring.enable = lib.mkForce false;
+  # services.gnome.gnome-keyring.enable = lib.mkForce false;
   services.gnome.at-spi2-core.enable = true;
   services.gnome.glib-networking.enable = true;
   services.redshift.enable = true;

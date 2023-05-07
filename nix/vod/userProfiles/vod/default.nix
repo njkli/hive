@@ -10,11 +10,11 @@ in
       {
         disabledModules = [
           "services/security/opensnitch.nix"
-          "services/security/pass-secret-service"
+          # "services/security/pass-secret-service"
         ];
       }
       cell.nixosModules.services.security.opensnitch
-      cell.nixosModules.services.security.pass-secret-service
+      # cell.nixosModules.services.security.pass-secret-service
       cell.nixosModules.services.x11.window-managers.stumpwm-new
     ] ++
     (with cell.nixosProfiles;[
@@ -31,7 +31,7 @@ in
       inputs.cells.bootstrap.nixosProfiles.core.fonts
     ];
 
-  services.pass-secret-service.enable = true;
+  # services.pass-secret-service.enable = true;
   services.xserver.windowManager.stumpwm-new.enable = true;
   services.xserver.windowManager.stumpwm-new.package = pkgs.stumpwm-git-new;
 

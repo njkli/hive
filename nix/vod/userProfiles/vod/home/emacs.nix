@@ -130,16 +130,16 @@ in
     tidyp
     html-tidy
 
-    (texlive.combine {
-      inherit (texlive)
-        # scheme-basic
-        scheme-full
-        xcolor
-        xcolor-solarized
-        koma-script
-        koma-script-examples
-        koma-script-sfs;
-    })
+    # (texlive.combine {
+    #   inherit (texlive)
+    #     # scheme-basic
+    #     scheme-full
+    #     xcolor
+    #     xcolor-solarized
+    #     koma-script
+    #     koma-script-examples
+    #     koma-script-sfs;
+    # })
   ];
 
   # programs.chemacs.enable = true;

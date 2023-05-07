@@ -14,3 +14,13 @@
     "mds=off" # Zombieload attacks are fine
   ];
 }
+/*
+  FIXME: Unknown kernel command line parameters in 6.1.27 :
+  noibrs
+  noibpb
+  nospectre_v2
+  nospec_store_bypass_disable
+  no_stf_barrier
+  cgroup_enable=memory
+  cgroup_memory=1
+*/

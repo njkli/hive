@@ -27,6 +27,11 @@ rec {
     nyxt-browser
   ];
 
+  developer.default = [
+    inputs.cells.bootstrap.homeProfiles.git
+    cell.homeProfiles.developer.git
+  ];
+
   # hostSpecific.libvirtd = default;
   # userSpecific.admin = default;
 

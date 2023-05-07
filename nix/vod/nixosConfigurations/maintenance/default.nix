@@ -13,38 +13,37 @@ rec {
   };
 
   imports =
-    # [ ({ config, ... }: (cell.lib.mkHome "vod" config.networking.hostName "zsh")) ] ++
     cell.nixosSuites.networking ++
     [
       bee.home.nixosModules.home-manager
-      cell.hardwareProfiles.${baseNameOf ./.}
+      # cell.hardwareProfiles.${baseNameOf ./.}
+      inputs.cells.hardware.nixosProfiles.intel
+      inputs.cells.hardware.nixosProfiles.default
+
       cell.nixosProfiles.zfs
       inputs.cells.virtualization.nixosProfiles.docker
       inputs.cells.bootstrap.nixosProfiles.core.kernel.physical-access-system
       (cell.nixosProfiles.default { boot = "grub-zfs"; })
       ({ lib, ... }: {
         boot.kernelParams = lib.mkAfter [
-          "zfs.zfs_arc_max=${toString (4 * 1024 * 1024 * 1024)}"
+          "nomodeset"
         ];
       })
       {
         deploy.enable = true;
         deploy.params.hidpi.enable = true;
-        deploy.params.lan.mac = "16:07:77:ff:ba:ff";
-        deploy.params.lan.ipv4 = "10.11.1.122/24";
+        deploy.params.lan.mac = "16:07:77:ff:b4:ff";
+        deploy.params.lan.ipv4 = "10.11.1.123/24";
         deploy.params.lan.dhcpClient = false;
 
         systemd.network.networks.lan = {
-          addresses = [{ addressConfig.Address = "10.11.1.122/24"; }];
+          addresses = [{ addressConfig.Address = "10.11.1.123/24"; }];
           networkConfig.Gateway = "10.11.1.1";
           dns = [ "8.8.8.8" ];
         };
 
         networking.hostName = baseNameOf ./.;
-        networking.hostId = "23d7e1ff";
-
-        # services.redshift.brightness.night = "0.85";
-        # services.redshift.brightness.day = "0.85";
+        networking.hostId = "21d5e1ff";
       }
     ];
 }

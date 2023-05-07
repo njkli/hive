@@ -1,7 +1,7 @@
 { inputs, config, pkgs, profiles, suites, osConfig, lib, ... }:
 with lib;
 let
-  isHiDpi = hasAttrByPath [ "deploy" "params" "hiDpi" ] osConfig && osConfig.deploy.params.hiDpi;
+  isHiDpi = hasAttrByPath [ "deploy" "params" "hidpi" ] osConfig && osConfig.deploy.params.hidpi.enable;
 in
 {
   imports =
@@ -15,6 +15,7 @@ in
       profiles.multimedia.players
       profiles.pentester.traffic
       profiles.security.keybase
+      profiles.security.password-store
     ] ++
     (with profiles.look-and-feel;
     [

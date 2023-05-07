@@ -12,7 +12,7 @@ in
       [
         cell.nixosModules.hm-system-defaults
 
-        ({ pkgs, lib, ... }: {
+        ({ pkgs, lib, config, ... }: {
           programs.${shell}.enable = true;
           users.users.${username}.shell = pkgs.${shell};
 

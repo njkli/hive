@@ -194,7 +194,8 @@ mkMerge [
       gpa
       yubikey-personalization-gui
       yubikey-manager-qt
-      yubioath-desktop
+      # yubioath-desktop
+      yubioath-flutter
       trezor-suite
       nitrokey-app
       # FIXME: warnings on collisions ledger-live-desktop

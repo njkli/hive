@@ -23,14 +23,14 @@ lib.mkMerge [
           lockPref("extensions.autoDisableScopes", 0)
         '';
 
-        programs.firefox.extensions = with pkgs.firefox-addons.nixpkgs; [
-          ether-metamask
-          russian-spellchecking-dic-3703
-          export-tabs-urls-and-titles
-          passff
-          org-capture
-          promnesia
-          swisscows-search
+        programs.firefox.extensions = with pkgs.firefox-addons; [
+          ether-metamask.value
+          russian-spellchecking-dic-3703.value
+          export-tabs-urls-and-titles.value
+          passff.value
+          org-capture.value
+          promnesia.value
+          swisscows-search.value
 
           # aw-watcher-web
 

@@ -1,5 +1,7 @@
-# { inputs, cell, ... }:
 inputs.cells.common.lib.rakeLeaves ./homeProfiles
+
+# { inputs, cell, ... }:
+
 # let
 #   inherit (cell) homeProfiles homeModules;
 # in

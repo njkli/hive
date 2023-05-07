@@ -14,6 +14,7 @@
     binutils
     coreutils
     moreutils
+    sysfsutils
     utillinux # A set of system utilities for Linux
     file
     lsof

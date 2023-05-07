@@ -4,6 +4,9 @@
   # bootstrap = import ./nixosConfigurations/bootstrap { inherit inputs cell; };
 
   # Main machine
+  # maintenance = import ./nixosConfigurations/maintenance { inherit inputs cell; };
+
+  # Main machine
   asbleg = import ./nixosConfigurations/asbleg { inherit inputs cell; };
 
   # remote-displays

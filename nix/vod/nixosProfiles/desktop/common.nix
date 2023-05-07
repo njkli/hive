@@ -7,16 +7,17 @@
     programs.bash.enableVteIntegration = true;
   }];
 
-  imports = with profiles.core; [
-    kernel.binfmt
-    fonts
-    profiles.desktop.printer-kyocera
+  imports = [
+    inputs.cells.bootstrap.nixosProfiles.core.kernel.binfmt
+    cell.nixosProfiles.fonts
+    cell.nixosProfiles.desktop.printer-kyocera
   ];
 
   services.xserver.displayManager.job.logToFile = false;
   services.xserver.displayManager.job.logToJournal = false;
 
   services.xserver.enable = true;
+  services.xserver.videoDrivers = lib.mkDefault [ "intel" ];
   services.xserver.updateDbusEnvironment = true;
   services.xserver.displayManager.lightdm = {
     enable = true;
@@ -69,9 +70,9 @@
 
   xdg.mime.enable = true;
 
-  qt5.enable = true;
-  qt5.style = "gtk2";
-  qt5.platformTheme = "gtk2";
+  qt.enable = true;
+  qt.style = "gtk2";
+  qt.platformTheme = "gtk2";
 
   programs.light.enable = true;
 

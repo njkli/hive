@@ -1,4 +1,7 @@
 { inputs, cell, }:
+let
+  inherit (inputs.nixpkgs.lib) mkDefault;
+in
 {
   programs.gh.enable = true;
   programs.gh.settings.git_protocol = "ssh";
@@ -6,7 +9,7 @@
   programs.git.enable = true;
   programs.git.lfs.enable = true;
   programs.git.delta.enable = true;
-  programs.git.delta.options = {
+  programs.git.delta.options = mkDefault {
     plus-style = "syntax #012800";
     minus-style = "syntax #340001";
     syntax-theme = "Monokai Extended"; # TODO: change theme!

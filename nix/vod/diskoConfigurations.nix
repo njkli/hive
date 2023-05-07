@@ -324,7 +324,7 @@
     let
       inherit (lib) listToAttrs nameValuePair removePrefix;
       disk = listToAttrs (map
-        (device: nameValuePair (removePrefix "/dev/" device) {
+        (device: nameValuePair (removePrefix "/dev/disk/by-id/" device) {
           inherit device;
           type = "disk";
           content.type = "table";
@@ -371,27 +371,27 @@
           };
 
           datasets = {
-            "local/root" = {
+            root = {
               type = "zfs_fs";
               mountpoint = "/";
               options.mountpoint = "legacy";
-              postCreateHook = "zfs snapshot rpool/local/root@blank";
+              postCreateHook = "zfs snapshot rpool/root@blank";
             };
 
-            "local/nix" = {
+            nix = {
               type = "zfs_fs";
               mountpoint = "/nix";
               options.mountpoint = "legacy";
             };
 
-            "persist/home" = {
+            home = {
               type = "zfs_fs";
               mountpoint = "/home";
               options.mountpoint = "legacy";
               options."com.sun:auto-snapshot" = "true";
             };
 
-            "persist/misc" = {
+            persist = {
               type = "zfs_fs";
               mountpoint = "/persist";
               options.mountpoint = "legacy";

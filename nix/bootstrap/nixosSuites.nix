@@ -19,10 +19,6 @@ rec {
     ++ [ cell.nixosModules.deploy ]
     ++ [{ _module.args = { inherit (inputs) self; }; }];
 
-  physical-access-system = [ cell.nixosProfiles.core.kernel.physical-access-system ];
-
-  minimal = default ++ [ cell.nixosProfiles.systemd-boot ];
-
   cloud = [
     {
       boot.cleanTmpDir = true;
@@ -31,6 +27,5 @@ rec {
     }
     inputs.cells.networking.nixosProfiles.openssh
     cell.nixosProfiles.nix
-    cell.nixosProfiles.services
   ];
 }

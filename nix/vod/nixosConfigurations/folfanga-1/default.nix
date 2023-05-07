@@ -13,10 +13,10 @@ rec {
   };
 
   imports =
-    inputs.cells.bootstrap.nixosSuites.physical-access-system ++
     cell.nixosSuites.remote-display ++
     [
       bee.home.nixosModules.home-manager
+      inputs.cells.bootstrap.nixosProfiles.core.kernel.physical-access-system
       cell.hardwareProfiles.${baseNameOf ./.}
       (cell.nixosProfiles.default { })
       {

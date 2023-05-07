@@ -7,7 +7,7 @@ rec {
       sudo
       nix
       earlyoom
-      tmp
+      # NOTE: not enough memory! tmp
       core.tlp
       core.fwupd
       core.locale

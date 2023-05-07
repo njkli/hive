@@ -3,9 +3,10 @@
   # NOTE: https://github.com/NixOS/nixpkgs/issues/5200
   # https://github.com/rycee/home-manager/issues/1011
   # REVIEW: candidate for removal!
-  # environment.loginShellInit = ''
-  #   [ -r $HOME/.profile ] && . $HOME/.profile || true
-  # '';
+
+  environment.loginShellInit = ''
+    [ -r $HOME/.profile ] && . $HOME/.profile || true
+  '';
 
   programs.fuse.userAllowOther = true; # NOTE: needed for impermanence in home-manager
   programs.command-not-found.enable = true; # to use the home-manager version

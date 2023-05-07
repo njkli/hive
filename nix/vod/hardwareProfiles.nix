@@ -48,9 +48,7 @@
 
   asbleg = { lib, pkgs, ... }:
     {
-      # boot.kernelPackages = pkgs.linuxPackages_latest;
       boot.kernelPackages = pkgs.linuxPackages_6_2;
-      # boot.zfs.enableUnstable = true;
 
       boot.consoleLogLevel = 0;
       disko.devices = cell.diskoConfigurations.asbleg { inherit lib; };
@@ -474,8 +472,9 @@
       # ];
     };
 
-  folfanga = { lib, ... }:
+  folfanga = { lib, pkgs, ... }:
     {
+      boot.kernelPackages = pkgs.linuxPackages_6_2;
       boot.consoleLogLevel = 0;
       disko.devices = cell.diskoConfigurations.folfanga { inherit lib; };
       imports =
@@ -488,8 +487,9 @@
         ];
     };
 
-  folfanga-1 = { lib, ... }:
+  folfanga-1 = { lib, pkgs, ... }:
     {
+      boot.kernelPackages = pkgs.linuxPackages_6_2;
       boot.consoleLogLevel = 0;
       disko.devices = cell.diskoConfigurations.folfanga-1 { inherit lib; };
       imports =
@@ -501,8 +501,9 @@
         ];
     };
 
-  folfanga-2 = { lib, ... }:
+  folfanga-2 = { lib, pkgs, ... }:
     {
+      boot.kernelPackages = pkgs.linuxPackages_6_2;
       boot.consoleLogLevel = 0;
       disko.devices = cell.diskoConfigurations.folfanga-2 { inherit lib; };
       imports =

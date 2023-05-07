@@ -14,7 +14,7 @@ in
 mkMerge [
   (mkIf isZfs {
     systemd.services.docker.preStart = ''
-      ! zfs list ${zpoolName}/local/docker && zfs create ${zpoolName}/local/docker || true
+      ! zfs list ${zpoolName}/docker && zfs create ${zpoolName}/docker || true
     '';
 
     virtualisation.docker.daemon.settings = {

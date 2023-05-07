@@ -5,7 +5,7 @@
 with lib;
 let
   cfg = config.services.xserver.windowManager.stumpwm-new;
-  cfgHm = config ? home-manager;
+  cfgHm = hasAttr "home-manager" config;
 
   fontPkg = pkgs.symlinkJoin {
     name = "hmLocalFontsDir";

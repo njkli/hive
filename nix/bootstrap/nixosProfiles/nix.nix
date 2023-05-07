@@ -45,9 +45,9 @@ in
     # https://github.com/NixOS/nix/issues/6666
     # https://github.com/NixOS/nixpkgs/issues/177142
     # BUG: "ca-derivations"
-    "auto-allocate-uids"
-    "cgroups"
-    "recursive-nix"
+    # "auto-allocate-uids"
+    # "cgroups"
+    # "recursive-nix"
   ];
   nix.extraOptions = ''
     min-free = 536870912

@@ -62,7 +62,10 @@ let inherit (inputs.cells.common.lib) __inputs__; in rec {
             isRoot = hasAttr "/" config.fileSystems && config.fileSystems."/".fsType == "zfs";
             isZfs = (inInitrd || inSystem) && isRoot;
           in
-          [ (mkIf isZfs "/etc/machine-id") ];
+          [ (mkIf isZfs "/etc/machine-id") ] ++ [
+            "/etc/ssh/ssh_host_ed25519_key"
+            "/etc/ssh/ssh_host_rsa_key"
+          ];
       };
     };
 

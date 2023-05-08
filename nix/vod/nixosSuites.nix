@@ -23,6 +23,17 @@ rec {
     inputs.cells.networking.nixosProfiles.networkd
     inputs.cells.networking.nixosProfiles.firewall
     inputs.cells.networking.nixosProfiles.openssh
+    {
+      networking.hosts = {
+        "192.168.192.220" = [ "eadrax" ];
+        "192.168.192.221" = [ "asbleg" ];
+        "192.168.192.110" = [ "folfanga" ];
+        "192.168.192.111" = [ "folfanga-1" ];
+        "192.168.192.112" = [ "folfanga-2" ];
+      };
+      services.zerotierone.enable = true;
+      services.zerotierone.joinNetworks = [ "a84ac5c10a162ba4" ];
+    }
   ];
 
   remote-display =

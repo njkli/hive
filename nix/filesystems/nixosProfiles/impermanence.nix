@@ -49,9 +49,10 @@ let inherit (inputs.cells.common.lib) __inputs__; in rec {
           (mkIf virtualisation.libvirtd.enable
             "/var/lib/libvirt")
 
-          (mkIf services.zerotierone.enable
+          (mkIf services.zerotierone.enable "/var/lib/zerotier-one"
             # TODO: perhaps only keep identity.secret in /persist for zerotier
-            services.zerotierone.homeDir)
+            # services.zerotierone.homeDir
+          )
 
         ];
 

@@ -67,7 +67,7 @@ mkMerge [
       networks.unmanaged.networkConfig.IPv6AcceptRA = "no";
       networks.unmanaged.networkConfig.LinkLocalAddressing = "no";
 
-      networks.unmanaged.matchConfig.Name = concatStringsSep " " [
+      networks.unmanaged.matchConfig.Name = mkDefault (concatStringsSep " " [
         # "zt*" NOTE: custom zerotier module is managing networkd for zt
         "macvtap*"
         "cni*"
@@ -75,7 +75,7 @@ mkMerge [
         "docker*"
         "br-*"
         "veth*"
-      ];
+      ]);
     };
   }
 
@@ -121,7 +121,8 @@ mkMerge [
   })
 
   (mkIf config.networking.networkmanager.enable {
-    systemd.network.wait-online.anyInterface = true;
+    # systemd.network.wait-online.anyInterface = true;
+    systemd.network.wait-online.enable = false;
     # systemd.network.wait-online.timeout = 5;
     # systemd.network.wait-online.ignoredInterfaces = (splitString " "
     #   config.systemd.network.networks.local-eth.matchConfig.Name)

@@ -5,7 +5,7 @@
   panning example here: https://blog.summercat.com/configuring-mixed-dpi-monitors-with-xrandr.html
   to allow mouse to pan, the resolution should be multiplied by scale factor and hence the panning area.
   also, apparently the mode changes as well, so investigate!
-  TODO: I want to escew using x11vncGeometry in favor of maybe doing xrandr scaling on clients instead, this would be neater!
+  TODO: I want to eschew using x11vncGeometry in favor of maybe doing xrandr scaling on clients instead, this would be neater!
 
   xrandr --output VIRTUAL5 \
   --pos 1920x3360 \
@@ -122,7 +122,8 @@ let
         xr = concatStringsSep "x" ml;
         cvt = concatStringsSep " " ml;
       };
-      newMode = "xrandr --newmode $(cvt -r ${modeStr.cvt} | grep -v '\"' | cut -d' ' -f 2) $(cvt -r  ${modeStr.cvt} | grep -v '^#' | cut -d' ' -f 3-) || true";
+      # TODO: bin/gtf - the modern alternative to cvt
+      newMode = "xrandr --newmode $(${pkgs.xorg_cvt}/bin/cvt -r ${modeStr.cvt} | grep -v '\"' | cut -d' ' -f 2) $(${pkgs.xorg_cvt}/bin/cvt -r  ${modeStr.cvt} | grep -v '^#' | cut -d' ' -f 3-) || true";
       addMode = "xrandr --addmode ${scr.id.xrandr} ${modeStr.xr} || true";
       applyMode = "xrandr --output ${scr.id.xrandr} --mode ${modeStr.xr} --pos ${posStr} ${optionalString hasOpts scr.xrandrExtraOpts}";
     in

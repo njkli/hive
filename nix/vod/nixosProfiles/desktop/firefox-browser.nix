@@ -24,12 +24,12 @@ lib.mkMerge [
         '';
 
         programs.firefox.extensions = with pkgs.firefox-addons; [
-          ether-metamask.value
+          # ether-metamask
           russian-spellchecking-dic-3703.value
           export-tabs-urls-and-titles.value
-          passff.value
-          org-capture.value
-          promnesia.value
+          # passff
+          # org-capture
+          # promnesia
           swisscows-search.value
 
           # aw-watcher-web
@@ -163,7 +163,7 @@ lib.mkMerge [
             "network.prefetch-next" = false;
             "network.trr.mode" = 5;
             "privacy.donottrackheader.enabled" = true;
-            "privacy.donottrackheader.value" = 1;
+            "privacy.donottrackheader" = 1;
             "privacy.trackingprotection.cryptomining.enabled" = true;
             "privacy.trackingprotection.enabled" = true;
             "privacy.trackingprotection.fingerprinting.enabled" = true;

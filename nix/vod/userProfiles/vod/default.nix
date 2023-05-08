@@ -16,7 +16,10 @@ in
       cell.nixosModules.services.security.opensnitch
       # cell.nixosModules.services.security.pass-secret-service
       cell.nixosModules.services.x11.window-managers.stumpwm-new
+      cell.nixosModules.services.x11.remote-display
+      # cell.nixosModules.services.networking.zerotierone
     ] ++
+    [ cell.nixosProfiles.desktop.remote-display-host-5-heads ] ++
     (with cell.nixosProfiles;[
       desktop.xdmcp
       desktop.common

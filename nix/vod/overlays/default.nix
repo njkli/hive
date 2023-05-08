@@ -5,7 +5,7 @@ let
   inherit (prev) callPackage;
   inherit (prev.nur.repos.rycee.firefox-addons) buildFirefoxXpiAddon;
   inherit (inputs.cells.common.lib) __inputs__ rakeLeaves flattenTree;
-  inherit (final.lib) filterAttrs last splitString mapAttrs' mapAttrs nameValuePair;
+  inherit (final.lib) filterAttrs last splitString mapAttrs' mapAttrs nameValuePair listToAttrs;
   inherit (builtins) elem;
 
   sources =
@@ -21,11 +21,13 @@ let
     (pkgsWithVscodeExtensions.lib.vscode-utils.builders.default
       { srcs = (filterAttrs (k: v: v ? publisher) final.sources.vscode-extensions); });
 
+  # listToAttrs ( attrValues (filterAttrs (k: v: k != "override" && k != "overrideDerivation") firefox-addons))
+
   firefox-addons =
-    mapAttrs
+    (mapAttrs
       (_: v:
         nameValuePair _ (final.fetchFirefoxAddon { inherit (v) url sha256; name = v.pname; }))
-      (callPackage ../packages/_sources_firefox-addons/generated.nix { });
+      (callPackage ../packages/_sources_firefox-addons/generated.nix { }));
 
   filtered = [
     "_sources"

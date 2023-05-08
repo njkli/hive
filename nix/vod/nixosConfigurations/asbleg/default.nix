@@ -24,11 +24,12 @@ rec {
       (cell.nixosProfiles.default { boot = "grub-zfs"; })
       ({ lib, ... }: {
         boot.kernelParams = lib.mkAfter [
-          "zfs.zfs_arc_max=${toString (4 * 1024 * 1024 * 1024)}"
+          "zfs.zfs_arc_max=${toString (2 * 1024 * 1024 * 1024)}"
         ];
       })
       ({ pkgs, ... }:
         {
+          systemd.network.networks.local-eth.matchConfig.Name = "eno1";
           networking.wireless.enable = false;
           networking.networkmanager.enable = true;
           services.udev.packages = with pkgs; [ crda ];

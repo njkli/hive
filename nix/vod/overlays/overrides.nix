@@ -162,4 +162,5 @@ final: prev: {
 
   python3Override = nixpkgs-master.python3;
   makeDesktopItem = final.make-desktopitem;
+  xorg_cvt = nixpkgs-22-11.xorg.xorgserver;
 }

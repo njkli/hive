@@ -9,14 +9,14 @@ lib.mkMerge [
     # programs.chromium.defaultSearchProviderSuggestURL = "";
 
     programs.chromium.extensions = [
-      "nglaklhklhcoonedhgnpgddginnjdadi" # TODO: mkIf hmModule activitywatch enabled.
+      # "nglaklhklhcoonedhgnpgddginnjdadi" # TODO: mkIf hmModule activitywatch enabled.
       "nkbihfbeogaeaoehlefnkodbefgpgknn" # metamask
-      "kbbdabhdfibnancpjfhlkhafgdilcnji" # Screenity
-      "kkkjlfejijcjgjllecmnejhogpbcigdc" # org-capture
-      "kdmegllpofldcpaclldkopnnjjljoiio" # promnesia
-      "bjfhmglciegochdpefhhlphglcehbmek" # hypothes.is - web annotation
-      "liecbddmkiiihnedobmlmillhodjkdmb" # https://www.loom.com
-      "lpfemeioodjbpieminkklglpmhlngfcn" # WebChatGPT: ChatGPT with internet access
+      # "kbbdabhdfibnancpjfhlkhafgdilcnji" # Screenity
+      # "kkkjlfejijcjgjllecmnejhogpbcigdc" # org-capture
+      # "kdmegllpofldcpaclldkopnnjjljoiio" # promnesia
+      # "bjfhmglciegochdpefhhlphglcehbmek" # hypothes.is - web annotation
+      # "liecbddmkiiihnedobmlmillhodjkdmb" # https://www.loom.com
+      # "lpfemeioodjbpieminkklglpmhlngfcn" # WebChatGPT: ChatGPT with internet access
       ### NOTE: Another org-capture thing, without much deps https://github.com/karlicoss/grasp
       # "ohhbcfjmnbmgkajljopdjcaokbpgbgfa"
       ###

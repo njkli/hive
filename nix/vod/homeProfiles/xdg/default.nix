@@ -12,6 +12,5 @@ mkMerge [
   {
     xdg.mimeApps.associations.added."application/pdf" = "org.gnome.Evince.desktop";
     xdg.mimeApps.defaultApplications."application/pdf" = "org.gnome.Evince.desktop";
-
   }
 ]

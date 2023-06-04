@@ -15,10 +15,13 @@ mkMerge [
   })
 
   (mkIf (config.services.gpg-agent.enable && config.services.gpg-agent.enableExtraSocket) {
+    # NOTE: https://mlohr.com/gpg-agent-forwarding
+    # NOTE: will break if UID is different!
+    # TODO: Find out where XDG_RUNTIME_DIR is set and take the value from there
     programs.ssh.matchBlocks."eadrax eadrax.njk.*".remoteForwards = [{
       bind.address = "/run/user/${toString uid}/gnupg/S.gpg-agent";
       host.address = replaceStrings [ "%t" ] [ "/run/user/${toString uid}" ]
-        osConfig.home-manager.users.${name}.systemd.user.sockets.gpg-agent-extra.Socket.ListenStream;
+        config.systemd.user.sockets.gpg-agent-extra.Socket.ListenStream;
     }];
   })
 

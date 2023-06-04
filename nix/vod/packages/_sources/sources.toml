@@ -574,7 +574,8 @@ fetch.github = "StevenBlack/hosts"
 # fetch.url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/$ver/AdGuardHome_linux_amd64.tar.gz"
 
 [ledger-live-desktop]
-src.manual = "2.57.0"
+# src.manual = "2.57.0"
+src.manual = "2.60.0"
 fetch.url = "https://download.live.ledger.com/ledger-live-desktop-$ver-linux-x86_64.AppImage"
 
 # [ledger-live-desktop-systemd-patch]

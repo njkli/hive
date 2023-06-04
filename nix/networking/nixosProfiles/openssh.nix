@@ -8,8 +8,10 @@
     settings = {
       LogLevel = "INFO";
       KbdInteractiveAuthentication = false;
+      # https://github.com/NixOS/nixpkgs/issues/234683
+      # permitRootLogin = mkDefault "no";
       PasswordAuthentication = false;
-      permitRootLogin = mkDefault "no";
+      PermitRootLogin = mkDefault "no";
       X11Forwarding = mkDefault true;
     };
     extraConfig = ''

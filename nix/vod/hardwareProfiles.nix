@@ -49,6 +49,7 @@
   asbleg = { lib, pkgs, ... }:
     {
       boot.kernelPackages = pkgs.linuxPackages_6_2;
+      # boot.kernelPackages = pkgs.linuxPackages_latest;
 
       boot.consoleLogLevel = 0;
       disko.devices = cell.diskoConfigurations.asbleg { inherit lib; };

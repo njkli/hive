@@ -663,11 +663,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1683196088,
-        "narHash": "sha256-MO4i1ceO2WqwyEn/iggDyMOWMVUb0oIicRpfY4MgNko=",
+        "lastModified": 1685885003,
+        "narHash": "sha256-+OB0EvZBfGvnlTGg6mtyUCqkMnUp9DkmRUU4d7BZBVE=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "6abb775e75a7f25451781dc704cfe03f27ad7496",
+        "rev": "607d8fad96436b134424b9935166a7cd0884003e",
         "type": "github"
       },
       "original": {
@@ -978,6 +978,22 @@
     },
     "nixos-unstable": {
       "locked": {
+        "lastModified": 1685899275,
+        "narHash": "sha256-4i3pCj/UBCN8M9jUKD3SEu5FhKN+wi4UXsbmLJYGoSw=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "3f697e808b31a955462bc0b20b229d4072c99aa7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable-small",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixos-unstable-linux_6_2": {
+      "locked": {
         "lastModified": 1683185507,
         "narHash": "sha256-Wcj09pigMFgj+0borXeoJvVMwH2Rc4gkSq4BwNq3k7s=",
         "owner": "nixos",
@@ -987,8 +1003,8 @@
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-unstable-small",
         "repo": "nixpkgs",
+        "rev": "63464b8c2837ec56e1d610f5bd2a9b8e1f532c07",
         "type": "github"
       }
     },
@@ -1041,11 +1057,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1683082554,
-        "narHash": "sha256-emO6mChgdBi4RwchtCCtAkvFf/OSkMyOQMqk6EZEPJA=",
+        "lastModified": 1685866647,
+        "narHash": "sha256-4jKguNHY/edLYImB+uL8jKPL/vpfOvMmSlLAGfxSrnY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0d373d5af960504dd60c3d06c65e553b36ef29d8",
+        "rev": "a53a3bec10deef6e1cc1caba5bc60f53b959b1e8",
         "type": "github"
       },
       "original": {
@@ -1496,6 +1512,7 @@
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixos-unstable": "nixos-unstable",
+        "nixos-unstable-linux_6_2": "nixos-unstable-linux_6_2",
         "nixpkgs": [
           "nixpkgs-unstable"
         ],

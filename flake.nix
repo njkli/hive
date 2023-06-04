@@ -57,6 +57,8 @@
     nixos.follows = "nixos-unstable";
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable-small";
 
+    nixos-unstable-linux_6_2.url = "github:nixos/nixpkgs/63464b8c2837ec56e1d610f5bd2a9b8e1f532c07";
+
     nixos-22-11.url = "github:nixos/nixpkgs/release-22.11";
 
     home-22-11.url = "github:nix-community/home-manager/release-22.11";

@@ -1,3 +1,4 @@
+# TODO: https://nixos.org/manual/nixpkgs/stable/#lisp
 { inputs, cell, ... }:
 let
   nixpkgs-22-11 = import inputs.nixos-22-11 {

@@ -45,7 +45,7 @@
   # nixpkgs & home-manager
   inputs = {
     # https://github.com/NixOS/nixpkgs/issues/97379
-    nixpkgs-activitywatch.url = "github:NixOS/nixpkgs?ref=pull/202935/head";
+    # NOTE: PR accepted and merged  nixpkgs-activitywatch.url = "github:NixOS/nixpkgs?ref=pull/202935/head";
 
     nixpkgs.follows = "nixpkgs-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -71,6 +71,10 @@
   # individual inputs
   inputs = {
     nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+    nix-doom-emacs.inputs.nixpkgs.follows = "nixos";
+
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    emacs-overlay.inputs.nixpkgs.follows = "nixos";
   };
 
   outputs =

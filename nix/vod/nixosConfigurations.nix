@@ -3,10 +3,9 @@
   # The sauce
   # bootstrap = import ./nixosConfigurations/bootstrap { inherit inputs cell; };
 
-  # Main machine
   # maintenance = import ./nixosConfigurations/maintenance { inherit inputs cell; };
 
-  # Main machine
+  # in-hand machine
   asbleg = import ./nixosConfigurations/asbleg { inherit inputs cell; };
 
   # remote-displays

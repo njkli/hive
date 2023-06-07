@@ -28,7 +28,7 @@ let
 in
 final: prev: {
   inherit (nixos-unstable-linux_6_2) linuxPackages_6_2;
-  inherit (nixpkgs-activitywatch) activitywatch;
+  # inherit (nixpkgs-activitywatch) activitywatch;
   inherit (nixpkgs-22-11) nyxt;
 
   inherit (nixpkgs-master.nodePackages)
@@ -132,6 +132,7 @@ final: prev: {
     kubernetes-helmPlugins;
 
   inherit (nixpkgs-master)
+    activitywatch
     # Broken? ventoy-bin
     ventoy-bin-full
     #

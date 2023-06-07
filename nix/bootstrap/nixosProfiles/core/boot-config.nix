@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  inherit (lib) mkAfter mkDefault;
+  inherit (lib) mkAfter mkIf mkDefault;
 in
 {
   # Speed up boot
@@ -23,6 +23,9 @@ in
 
   environment.systemPackages = [ pkgs.efibootmgr ];
   powerManagement.cpuFreqGovernor = mkDefault "powersave";
+  powerManagement.resumeCommands = mkIf config.services.zerotierone.enable ''
+    ${pkgs.systemd}/bin/systemctl --no-block restart zerotierone.service
+  '';
 
   # TODO: services.smartd.enable
 

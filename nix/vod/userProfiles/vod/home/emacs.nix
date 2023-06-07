@@ -1,6 +1,7 @@
 { pkgs, profiles, ... }:
 let
-  vodEmacsPkg = pkgs.emacs;
+  # vodEmacsPkg = pkgs.emacs;
+  vodEmacsPkg = pkgs.emacs29-gtk3;
   vodEmacsExtraPkgs =
     let
       emacsPackages = pkgs.emacsPackagesFor vodEmacsPkg;
@@ -37,12 +38,12 @@ let
       # vterm
       # vterm-toggle
       grab-x-link
-      sly
-      sly-asdf
-      sly-macrostep
-      sly-named-readtables
-      sly-quicklisp
-      sly-repl-ansi-color
+      # sly
+      # sly-asdf
+      # sly-macrostep
+      # sly-named-readtables
+      # sly-quicklisp
+      # sly-repl-ansi-color
     ];
 in
 
@@ -70,11 +71,11 @@ in
       packageRequires = with self; [ org s ];
     };
 
-    activity-watch-mode = self.trivialBuild {
-      inherit (pkgs.sources.activity-watch-mode) pname version src;
-      ename = "activity-watch-mode";
-      packageRequires = with self; [ request cl-lib ];
-    };
+    # activity-watch-mode = self.trivialBuild {
+    #   inherit (pkgs.sources.activity-watch-mode) pname version src;
+    #   ename = "activity-watch-mode";
+    #   packageRequires = with self; [ request cl-lib ];
+    # };
 
     copilot = self.trivialBuild {
       inherit (pkgs.sources.copilot-el) pname version src;
@@ -141,44 +142,5 @@ in
     #     koma-script-sfs;
     # })
   ];
-
-  # programs.chemacs.enable = true;
-  # programs.chemacs.profiles = {
-  #   spacemacs.package = pkgs.sources.spacemacs.src;
-  #   spacemacs.cfgDir = "${self}/users/${name}/dotfiles/spacemacs.d";
-  #   spacemacs.envName = "SPACEMACSDIR";
-  #   spacemacs.binInPath = false;
-
-  #   doom-emacs.default = true;
-  #   doom-emacs.package = pkgs.sources.doom-emacs.src;
-  #   doom-emacs.cfgDir = "${self}/users/${name}/dotfiles/doom.d";
-  #   doom-emacs.envName = "DOOMDIR";
-  #   # doom-emacs.extraSessionVariables.DOOMDIR = "${config.xdg.configHome}/chemacs/doom-emacs";
-  #   doom-emacs.extraSessionVariables.DOOMLOCALDIR = "${config.xdg.dataHome}/chemacs/doom-emacs";
-  #   doom-emacs.binInPath = true;
-  #   doom-emacs.linkCfg = false; # TODO: Config is writable like this
-
-  #   # doom-emacs.onCfgChangePerFile = '''';
-  #   doom-emacs.updateCmd = ''
-  #     cfgDir=$XDG_PROJ_DIR/world/users/${name}/dotfiles/doom.d
-  #     # "lisp" "etc"
-  #     linkables=("modules" "lisp" "snippets" "config.org")
-
-  #     for item in ''${linkables[@]}
-  #     do
-  #       ln -sfT $cfgDir/$item $DOOMDIR/$item
-  #     done
-
-  #     cd $DOOMDIR
-  #     emacs -Q -batch -l 'lisp/compile.el'
-  #     doom sync
-  #   '';
-
-  #   doom-emacs.emacsOpts.package = vodEmacsPkgPgtkNativeComp;
-  #   doom-emacs.emacsOpts.extraPackages = vodEmacsExtraPkgs;
-  # };
-  # home.sessionVariables.DOOMDIR = "${config.xdg.configHome}/chemacs/doom-emacs";
-
-  # systemd.user.services.emacs.Unit.ConditionPathExists = "%h/Projects/world/users/%u/dotfiles/doom.d/config.org";
 
 }

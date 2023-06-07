@@ -1,0 +1,38 @@
+#+title: Todo
+* Enable and configure services
+** General purpose
+*** TODO services.atuin.enable
+*** TODO services.networkd-dispatcher.enable
+*** TODO services.photoprism.enable
+*** TODO services.kavita.enable
+*** TODO programs.trippy.enable
+*** IDEA services.keyd.enable
+** Downloaders
+*** TODO services.readarr.enable
+** GUI
+*** TODO programs.sniffnet.enable
+*** TODO services.tts.servers
+* Consider / Evaluate
+** [[https://keepassxc.org/][Keepass]]
+** services.kubo.enable
+** services.teleport.enable
+** powerManagement.powertop.enable
+** services.monica.enable
+** services.headscale.enable
+** programs.singularity.enable [[https://apptainer.org/][Apptainer]]
+singularity-tools.buildImage
+** services.akkoma.enable
+* Configuration changes
+** TODO Use encrypted swap
+#+begin_src nix
+swapDevices = [ {
+  device = "/dev/disk/by-partlabel/swapspace";
+  randomEncryption = {
+    enable = true;
+    cipher = "aes-xts-plain64";
+    keySize = 512;
+    sectorSize = 4096;
+  };
+} ];
+#+end_src
+** TODO security.pam.zfs

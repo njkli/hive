@@ -16,15 +16,28 @@ rec {
     cell.nixosSuites.networking ++
     [
       bee.home.nixosModules.home-manager
+
       inputs.cells.hardware.nixosProfiles.intel
       inputs.cells.hardware.nixosProfiles.default
 
+      inputs.cells.networking.nixosProfiles.adguardhome
+
       cell.nixosProfiles.zfs
       (cell.nixosProfiles.default { boot = "grub-zfs"; })
-      ({ lib, ... }: { boot.kernelParams = lib.mkAfter [ "nomodeset" ]; })
+      ({ lib, pkgs, ... }: {
+        boot.kernelParams = lib.mkAfter [
+          "zfs.zfs_arc_max=${toString (1 * 1024 * 1024 * 1024)}"
+          "nomodeset"
+        ];
+
+        networking.wireless.enable = false;
+        networking.networkmanager.enable = true;
+        services.udev.packages = with pkgs; [ crda ];
+      })
+
       {
         deploy.enable = true;
-        deploy.params.hidpi.enable = true;
+        deploy.params.hidpi.enable = false;
         deploy.params.lan.mac = "16:07:77:ff:b4:ff";
         deploy.params.lan.ipv4 = "10.11.1.123/24";
         deploy.params.lan.dhcpClient = false;

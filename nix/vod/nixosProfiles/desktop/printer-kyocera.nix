@@ -26,10 +26,7 @@ in
   services.printing.enable = true;
   services.printing.startWhenNeeded = true;
   services.printing.webInterface = false;
-  services.printing.drivers = with pkgs; [
-    cups-kyocera-ecosys-m552x-p502x
-    # TODO: cups-brother-mfcl3750cdw
-  ];
+  services.printing.drivers = with pkgs; [ cups-kyocera-ecosys-m552x-p502x ];
 
   hardware.printers =
     let name = "Kyocera_ECOSYS"; in
@@ -49,7 +46,8 @@ in
           MediaType = "Plain";
           OutputMode = "Normal";
         };
-        deviceUri = "socket://kyocera-printer.njk.local:9100";
+        deviceUri = "usb://Kyocera/ECOSYS%20P5021cdn?serial=VDH1854712";
+        # "socket://kyocera-printer.njk.local:9100";
         # lpinfo -m
         model = "Kyocera/Kyocera ECOSYS P5021cdn.PPD";
       }];

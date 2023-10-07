@@ -39,7 +39,7 @@ in
       ballerina # NOTE: currently only java support
     ]);
 
-  home.packages = with pkgs; [ tigervnc jekyll vultr-cli ];
+  home.packages = with pkgs; [ tigervnc jekyll vultr-cli virt-manager ];
 
   # FIXME: programs.activitywatch.enable = true;
 

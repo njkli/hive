@@ -19,6 +19,7 @@ rec {
       bee.home.nixosModules.home-manager
       cell.hardwareProfiles.${baseNameOf ./.}
       cell.nixosProfiles.zfs
+      cell.nixosProfiles.desktop.printer-kyocera
       # FIXME: inputs.cells.virtualization.nixosProfiles.docker
       inputs.cells.bootstrap.nixosProfiles.core.kernel.physical-access-system
       inputs.cells.networking.nixosProfiles.adguardhome

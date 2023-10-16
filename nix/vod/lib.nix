@@ -63,6 +63,7 @@ in
       [{ disabledModules = disableModulesFrom ./homeModules; }] ++
       (with cell.homeModules; [
         services.trezor-agent
+        services.emacs
         programs.firefox
         programs.promnesia
         programs.chemacs

@@ -7,6 +7,7 @@ let inherit (inputs.cells.common.lib) __inputs__; in
     cell.overlays.overrides
     inputs.nur.overlay
 
+    cell.overlays.masterpdfeditor
     # inputs.cells.utils.overlays.default
 
     cell.overlays.stumpwm

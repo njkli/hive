@@ -305,6 +305,7 @@ let
         "surfraw"
         "stumpish" # NOTE: stumpish is a shell-script
         "stump-backlight"
+        "winner-mode"
       ];
       customDeps = { alert-me.lispLibs = [ final.stumpwm-contrib.notifications ]; };
       customASD = { golden-ratio.systems = [ "swm-golden-ratio" ]; };

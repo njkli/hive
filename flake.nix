@@ -58,6 +58,7 @@
     nixos-unstable.url = "github:nixos/nixpkgs/nixos-unstable-small";
 
     nixos-unstable-linux_6_2.url = "github:nixos/nixpkgs/63464b8c2837ec56e1d610f5bd2a9b8e1f532c07";
+    nixos-unstable-linux_6_5.url = "github:nixos/nixpkgs/b644d97bda6dae837d577e28383c10aa51e5e2d2";
 
     nixos-22-11.url = "github:nixos/nixpkgs/release-22.11";
 

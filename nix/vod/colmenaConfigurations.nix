@@ -5,6 +5,12 @@
   #   deployment.targetHost = "127.0.0.1";
   #   inherit (cell.nixosConfigurations.desktop) bee imports;
   # };
+  oglaroon = {
+    deployment.targetHost = "192.168.192.125";
+    deployment.targetUser = "admin";
+    deployment.tags = [ "laptop" "everything" ];
+    inherit (cell.nixosConfigurations.oglaroon) bee imports;
+  };
 
   asbleg = {
     # deployment.targetHost = "10.11.1.122";

@@ -32,6 +32,21 @@
   #       ];
   #   };
 
+  oglaroon = { lib, ... }:
+    {
+      boot.kernelPackages = pkgs.linuxPackages_6_5;
+      boot.initrd.availableKernelModules = [ "nvme" "nvme_core" ];
+      disko.devices = cell.diskoConfigurations.oglaroon { inherit lib; };
+      imports =
+        [
+          cell.nixosProfiles.zfs
+          inputs.cells.filesystems.nixosProfiles.impermanence.vod
+          inputs.cells.hardware.nixosProfiles.amd
+          inputs.cells.hardware.nixosProfiles.default
+          inputs.disko.nixosModules.disko
+        ];
+    };
+
   eadrax = { lib, ... }:
     {
       boot.initrd.availableKernelModules = [ "nvme" "nvme_core" ];

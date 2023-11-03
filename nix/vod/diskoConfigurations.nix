@@ -320,6 +320,93 @@
 
     };
 
+  oglaroon = { disks ? [ "/dev/disk/by-id/nvme-CT1000P2SSD8_2228E648DC10" ], lib, ... }:
+    let
+      inherit (lib) listToAttrs nameValuePair removePrefix;
+      disk = listToAttrs (map
+        (device: nameValuePair (removePrefix "/dev/disk/by-id/" device) {
+          inherit device;
+          type = "disk";
+          content.type = "table";
+          content.format = "gpt";
+          content.partitions = [
+
+            {
+              name = "ESP";
+              start = "1MiB";
+              end = "1GiB";
+              bootable = true;
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+              };
+            }
+
+            {
+              name = "zfs";
+              start = "1GiB";
+              end = "100%";
+              content = {
+                type = "zfs";
+                pool = "rpool";
+              };
+            }
+          ];
+
+        })
+        disks);
+    in
+    {
+      inherit disk;
+
+      zpool = {
+        rpool = {
+          type = "zpool";
+          rootFsOptions = {
+            compression = "lz4";
+            mountpoint = "none";
+            acltype = "posixacl";
+            xattr = "sa";
+          };
+
+          datasets = {
+            root = {
+              type = "zfs_fs";
+              mountpoint = "/";
+              options.mountpoint = "legacy";
+              postCreateHook = "zfs snapshot rpool/root@blank";
+            };
+
+            nix = {
+              type = "zfs_fs";
+              mountpoint = "/nix";
+              options.mountpoint = "legacy";
+            };
+
+            home = {
+              type = "zfs_fs";
+              mountpoint = "/home";
+              options.mountpoint = "legacy";
+              options."com.sun:auto-snapshot" = "true";
+            };
+
+            persist = {
+              type = "zfs_fs";
+              mountpoint = "/persist";
+              options.mountpoint = "legacy";
+            };
+
+            reserved = {
+              type = "zfs_fs";
+              options.mountpoint = "none";
+              options.refreservation = "1G";
+            };
+          };
+        };
+      };
+    };
+
   asbleg = { disks ? [ "/dev/disk/by-id/ata-BIWIN_SSD_2051028801186" ], lib, ... }:
     let
       inherit (lib) listToAttrs nameValuePair removePrefix;

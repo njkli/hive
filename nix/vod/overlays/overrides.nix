@@ -15,6 +15,11 @@ let
     config.allowUnfree = true;
   };
 
+  nixos-unstable-linux_6_5 = import inputs.nixos-unstable-linux_6_5 {
+    inherit (inputs.nixpkgs) system;
+    config.allowUnfree = true;
+  };
+
   nixpkgs-master = import inputs.nixpkgs-master {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
@@ -28,6 +33,7 @@ let
 in
 final: prev: {
   inherit (nixos-unstable-linux_6_2) linuxPackages_6_2;
+  inherit (nixos-unstable-linux_6_5) linuxPackages_6_5;
   # inherit (nixpkgs-activitywatch) activitywatch;
   inherit (nixpkgs-22-11) nyxt;
 

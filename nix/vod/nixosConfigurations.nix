@@ -5,6 +5,8 @@
 
   # maintenance = import ./nixosConfigurations/maintenance { inherit inputs cell; };
 
+  # HP laptop
+  oglaroon = import ./nixosConfigurations/oglaroon { inherit inputs cell; };
   # in-hand machine
   asbleg = import ./nixosConfigurations/asbleg { inherit inputs cell; };
 

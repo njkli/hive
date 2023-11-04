@@ -17,7 +17,7 @@
   services.xserver.displayManager.job.logToJournal = false;
 
   services.xserver.enable = true;
-  services.xserver.videoDrivers = lib.mkDefault [ "intel" ];
+  # services.xserver.videoDrivers = lib.mkDefault [ "intel" ];
   services.xserver.updateDbusEnvironment = true;
   services.xserver.displayManager.lightdm = {
     enable = true;

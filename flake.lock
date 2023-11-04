@@ -1146,6 +1146,22 @@
         "type": "github"
       }
     },
+    "nixos-unstable-linux_6_5": {
+      "locked": {
+        "lastModified": 1698931758,
+        "narHash": "sha256-pwl9xS9JFMXXR1lUP/QOqO9hiZKukEcVUU1A0DKQwi4=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "b644d97bda6dae837d577e28383c10aa51e5e2d2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "b644d97bda6dae837d577e28383c10aa51e5e2d2",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1675940568,
@@ -1671,6 +1687,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixos-unstable": "nixos-unstable",
         "nixos-unstable-linux_6_2": "nixos-unstable-linux_6_2",
+        "nixos-unstable-linux_6_5": "nixos-unstable-linux_6_5",
         "nixpkgs": [
           "nixpkgs-unstable"
         ],

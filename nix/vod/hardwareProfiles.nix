@@ -32,9 +32,20 @@
   #       ];
   #   };
 
-  oglaroon = { lib, ... }:
+  oglaroon = { lib, pkgs, ... }:
     {
-      boot.kernelPackages = pkgs.linuxPackages_6_5;
+      boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_5;
+      services.xserver.videoDrivers = [ "amdgpu" ];
+      hardware.opengl.extraPackages = [ pkgs.rocm-opencl-icd ];
+
+      # boot.kernelPackages = pkgs.linuxKernel.packagesFor
+      # (pkgs.linuxKernel.kernels.linux_5_10.override {
+      #   structuredExtraConfig = {
+      #     DEVICE_PRIVATE = kernel.yes;
+      #     KALLSYMS_ALL = kernel.yes;
+      #   };
+      # });
+
       boot.initrd.availableKernelModules = [ "nvme" "nvme_core" ];
       disko.devices = cell.diskoConfigurations.oglaroon { inherit lib; };
       imports =
@@ -65,6 +76,7 @@
     {
       boot.kernelPackages = pkgs.linuxPackages_6_2;
       # boot.kernelPackages = pkgs.linuxPackages_latest;
+      services.xserver.videoDrivers = [ "intel" ];
 
       boot.consoleLogLevel = 0;
       disko.devices = cell.diskoConfigurations.asbleg { inherit lib; };

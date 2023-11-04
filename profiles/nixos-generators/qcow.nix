@@ -23,7 +23,6 @@
   boot.loader.grub.efiInstallAsRemovable = lib.mkIf (pkgs.stdenv.system != "x86_64-linux") (lib.mkDefault true);
   boot.loader.timeout = 0;
 
-
   system.build.qcow = import "${toString modulesPath}/../lib/make-disk-image.nix" {
     inherit lib config pkgs;
     name = "libvirt-" + config.networking.hostName;

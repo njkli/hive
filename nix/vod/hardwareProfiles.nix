@@ -34,9 +34,9 @@
 
   oglaroon = { lib, pkgs, ... }:
     {
-      boot.kernelPackages = lib.mkForce pkgs.linuxPackages_6_5;
-      services.xserver.videoDrivers = [ "amdgpu" ];
-      hardware.opengl.extraPackages = [ pkgs.rocm-opencl-icd ];
+      boot.kernelPackages = pkgs.linuxPackages_6_5;
+      # services.xserver.videoDrivers = [ "amdgpu" ];
+      # hardware.opengl.extraPackages = [ pkgs.rocm-opencl-icd ];
 
       # boot.kernelPackages = pkgs.linuxKernel.packagesFor
       # (pkgs.linuxKernel.kernels.linux_5_10.override {
@@ -47,6 +47,7 @@
       # });
 
       boot.initrd.availableKernelModules = [ "nvme" "nvme_core" ];
+      boot.kernelParams = [ "amdgpu.sg_display=0" ];
       disko.devices = cell.diskoConfigurations.oglaroon { inherit lib; };
       imports =
         [
@@ -55,6 +56,11 @@
           inputs.cells.hardware.nixosProfiles.amd
           inputs.cells.hardware.nixosProfiles.default
           inputs.disko.nixosModules.disko
+
+          inputs.nixos-hardware.nixosModules.common-cpu-amd
+          inputs.nixos-hardware.nixosModules.common-cpu-amd-pstate
+          inputs.nixos-hardware.nixosModules.common-cpu-amd-raphael-igpu
+          inputs.nixos-hardware.nixosModules.common-gpu-amd
         ];
     };
 

@@ -1,10 +1,14 @@
+{ lib, ... }:
+let
+  inherit (lib) mkDefault;
+in
 {
-  boot.loader.timeout = 0;
+  boot.loader.timeout = mkDefault 0;
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.efiSysMountPoint = "/boot";
 
   boot.loader.grub.zfsSupport = true;
-  boot.loader.grub.enable = true;
+  boot.loader.grub.enable = mkDefault true;
   boot.loader.grub.splashImage = null;
   boot.loader.grub.efiInstallAsRemovable = true;
   boot.loader.grub.device = "nodev";

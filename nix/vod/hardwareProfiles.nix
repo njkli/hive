@@ -52,7 +52,7 @@
       imports =
         [
           cell.nixosProfiles.zfs
-          inputs.cells.filesystems.nixosProfiles.impermanence.vod
+          inputs.cells.filesystems.nixosProfiles.impermanence.default
           inputs.cells.hardware.nixosProfiles.amd
           inputs.cells.hardware.nixosProfiles.default
           inputs.disko.nixosModules.disko

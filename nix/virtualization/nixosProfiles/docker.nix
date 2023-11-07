@@ -18,7 +18,7 @@ mkMerge [
     '';
 
     virtualisation.docker.daemon.settings = {
-      storage-opts = [ "zfs.fsname=${zpoolName}/local/docker" ];
+      storage-opts = [ "zfs.fsname=${zpoolName}/docker" ];
       exec-opts = [ "native.cgroupdriver=systemd" ];
     };
 

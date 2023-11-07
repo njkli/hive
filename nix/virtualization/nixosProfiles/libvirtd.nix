@@ -4,7 +4,7 @@ let
 in
 mkMerge [
   {
-    boot.kernelModules = [ "kvm-intel" ];
+    boot.kernelModules = lib.mkDefault [ "kvm-intel" ];
 
     security.polkit.enable = true;
 

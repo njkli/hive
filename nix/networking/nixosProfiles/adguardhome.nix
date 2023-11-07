@@ -200,6 +200,10 @@ mkMerge
           "@@||web.whatsapp.com^$important"
           "@@||cache.nixos.org^$important"
           "@@||davidshield.com^$important"
+          # I do use linkedin
+          "@@||www.linkedin.com^$important"
+          "@@||static.licdn.com^$important"
+          "@@||media.licdn.com^$important"
         ];
         users = [{ name = "admin"; password = "$2y$05$n1jeESbnw1MsGKsqd9BiSO.GztmN5/RYO3jK.BHHhmdaoi5ZXhngW"; }];
         verbose = false;

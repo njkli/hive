@@ -49,6 +49,9 @@
 
     nixpkgs.follows = "nixpkgs-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+
+    nixpkgs-unstable-latest.url = "github:nixos/nixpkgs/ec750fd01963ab6b20ee1f0cb488754e8036d89d";
+
     nixpkgs-master.url = "github:nixos/nixpkgs";
 
     darwin.url = "github:LnL7/nix-darwin";

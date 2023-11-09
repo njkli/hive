@@ -24,7 +24,7 @@ rec {
     printing
     graphics
     libreoffice
-    nyxt-browser
+    nyxt
   ];
 
   developer.default = [

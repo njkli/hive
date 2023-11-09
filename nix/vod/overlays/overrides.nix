@@ -1,6 +1,6 @@
 { inputs, cell, ... }:
 let
-  nixpkgs-activitywatch = import inputs.nixpkgs-activitywatch {
+  nixpkgs-unstable-latest = import inputs.nixpkgs-unstable-latest {
     inherit (inputs.nixpkgs) system;
     config.allowUnfree = true;
   };
@@ -34,8 +34,8 @@ in
 final: prev: {
   inherit (nixos-unstable-linux_6_2) linuxPackages_6_2;
   inherit (nixos-unstable-linux_6_5) linuxPackages_6_5;
-  # inherit (nixpkgs-activitywatch) activitywatch;
-  inherit (nixpkgs-22-11) nyxt;
+  inherit (nixpkgs-unstable-latest) activitywatch nyxt;
+  # inherit (nixpkgs-22-11) nyxt;
 
   inherit (nixpkgs-master.nodePackages)
     bash-language-server
@@ -138,7 +138,6 @@ final: prev: {
     kubernetes-helmPlugins;
 
   inherit (nixpkgs-master)
-    activitywatch
     # Broken? ventoy-bin
     ventoy-bin-full
     #

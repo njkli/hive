@@ -92,7 +92,7 @@ in
     all-the-icons
     uhk-agent
     kea-ma
-    zeronsd
+    # zeronsd
     # FIXME: gitea-tea
     windows-fonts
     make-desktopitem

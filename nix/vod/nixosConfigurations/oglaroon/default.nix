@@ -20,7 +20,7 @@ rec {
       cell.hardwareProfiles.${baseNameOf ./.}
       cell.nixosProfiles.zfs
 
-      # cell.nixosProfiles.desktop.printer-kyocera
+      cell.nixosProfiles.desktop.printer-kyocera
 
       cell.nixosProfiles.virtualization
       { boot.kernelModules = [ "kvm-amd" ]; }

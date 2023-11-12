@@ -7,6 +7,4 @@
 let
   linkConfig = with builtins; pathExists "${self}/users/${name}/dotfiles/nyxt.d";
 in
-{
-  home.packages = [ pkgs.nyxt ];
-}
+{ home.packages = [ pkgs.nyxt ]; }

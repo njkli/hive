@@ -68,6 +68,9 @@
     home-22-11.url = "github:nix-community/home-manager/release-22.11";
     home-22-11.inputs.nixpkgs.follows = "nixos-22-11";
 
+    # FIXME: upgrade everything and remove the home-manager with activitywatch pull request
+    home-activitywatch.url = "github:nix-community/home-manager?ref=pull/4429/head";
+
     home.url = "github:nix-community/home-manager";
     home.inputs.nixpkgs.follows = "nixos";
   };

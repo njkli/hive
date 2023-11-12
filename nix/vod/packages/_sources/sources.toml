@@ -482,12 +482,12 @@ fetch.git = "https://github.com/key-networks/ztncui"
 # fetch.github = "zerotier/ZeroTierOne"
 
 #
-[zeronsd]
-src.git = "https://github.com/voobscout/zeronsd"
-fetch.github = "voobscout/zeronsd"
-cargo_locks = ["Cargo.lock"]
-# FIXME: Makefile prevents proper function, find how to filterSource with nvfetcher
-passthru = { cargoSha256 = "0000000000000000000000000000000000000000000000000000" }
+# [zeronsd]
+# src.git = "https://github.com/voobscout/zeronsd"
+# fetch.github = "voobscout/zeronsd"
+# cargo_locks = ["Cargo.lock"]
+# # FIXME: Makefile prevents proper function, find how to filterSource with nvfetcher
+# passthru = { cargoSha256 = "0000000000000000000000000000000000000000000000000000" }
 
 # [zeronsd]
 # src.git = "https://github.com/zerotier/zeronsd"

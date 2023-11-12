@@ -3,23 +3,23 @@
 {
   HPI = {
     pname = "HPI";
-    version = "0.3.20230327";
+    version = "0.4.20231102";
     src = fetchurl {
-      url = "https://pypi.org/packages/source/H/HPI/HPI-0.3.20230327.tar.gz";
-      sha256 = "sha256-0QkuK8hzJL/KzZmgNSjZ+Ts6lJcmYNmSsj8cofG5/Wk=";
+      url = "https://pypi.org/packages/source/H/HPI/HPI-0.4.20231102.tar.gz";
+      sha256 = "sha256-V3lzJs17I3zwaDowngD0gr1t0zRlMnuE7QZeb4dlbXA=";
     };
   };
   StevenBlack-hosts = {
     pname = "StevenBlack-hosts";
-    version = "9b6cb1109ab675ece26b57801e78d81e221ba0cc";
+    version = "85fd0ee9ce91e8585ea92272df5f5c34ae4489bf";
     src = fetchFromGitHub {
       owner = "StevenBlack";
       repo = "hosts";
-      rev = "9b6cb1109ab675ece26b57801e78d81e221ba0cc";
+      rev = "85fd0ee9ce91e8585ea92272df5f5c34ae4489bf";
       fetchSubmodules = false;
-      sha256 = "sha256-BdVTqXuaJVA5ndAhBuir6g5R+RzNGGvOmyaEqxlyTGg=";
+      sha256 = "sha256-u44zoJEMqPQCB5fAcl3FSijzPQjXqMqH+qIBChW5mJY=";
     };
-    date = "2023-10-17";
+    date = "2023-11-08";
   };
   acl-compat = {
     pname = "acl-compat";
@@ -36,10 +36,10 @@
   };
   adguardhome = {
     pname = "adguardhome";
-    version = "v0.107.39";
+    version = "v0.107.40";
     src = fetchurl {
-      url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.39/AdGuardHome_linux_amd64.tar.gz";
-      sha256 = "sha256-TXFUJnc/0Vysy/yOxFF7TPouSnjugsUc4fkrNGGOjkw=";
+      url = "https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.40/AdGuardHome_linux_amd64.tar.gz";
+      sha256 = "sha256-V2ttEus8QJLqMWt/A9FTG21SkvpBkIxKOT72C0qNEZI=";
     };
   };
   age-plugin-trezor = {
@@ -57,22 +57,22 @@
   };
   any-nix-shell = {
     pname = "any-nix-shell";
-    version = "c8536fa43f0e8b506e9dd1a91e2f01ceccca0251";
+    version = "2537e5c6901ef934f8f44d61bcfe938b0fc9fa71";
     src = fetchFromGitHub {
       owner = "haslersn";
       repo = "any-nix-shell";
-      rev = "c8536fa43f0e8b506e9dd1a91e2f01ceccca0251";
+      rev = "2537e5c6901ef934f8f44d61bcfe938b0fc9fa71";
       fetchSubmodules = false;
-      sha256 = "sha256-dQd1/RYH/j3R7MgMoz3EZ2Nxf3XXYCTKxBvi+cvyV2g=";
+      sha256 = "sha256-j1DE0WTBGLmBLoPmqST9YVj9Jc4Mp8WXQILmPBzRlbM=";
     };
-    date = "2022-12-11";
+    date = "2023-11-08";
   };
   brave = {
     pname = "brave";
-    version = "1.59.117";
+    version = "1.60.114";
     src = fetchurl {
-      url = "https://github.com/brave/brave-browser/releases/download/v1.59.117/brave-browser_1.59.117_amd64.deb";
-      sha256 = "sha256-yckxTKAgglk6YRXist9RZufZdI22iitecmb01NmYPGQ=";
+      url = "https://github.com/brave/brave-browser/releases/download/v1.60.114/brave-browser_1.60.114_amd64.deb";
+      sha256 = "sha256-SOnQBFIL+v5NdAWZ+mufj6XXBMIjqqCFKgO0oeveOBk=";
     };
   };
   brig = {
@@ -90,15 +90,15 @@
   };
   chatgpt-wrapper = {
     pname = "chatgpt-wrapper";
-    version = "a6b1e59d350dae210d37cdfd2050a3b79f19ab14";
+    version = "d61add11509b303134a8d36c175fce9ee770d001";
     src = fetchFromGitHub {
       owner = "mmabrouk";
       repo = "chatgpt-wrapper";
-      rev = "a6b1e59d350dae210d37cdfd2050a3b79f19ab14";
+      rev = "d61add11509b303134a8d36c175fce9ee770d001";
       fetchSubmodules = false;
-      sha256 = "sha256-foG3g63Yx5QtNcBP5aOnkmqOWsj0tX3EOHq3Il5WE+M=";
+      sha256 = "sha256-wSaH6yrrBUSssfP6VaNycNfAXOkgl2XCOIzzQpbRIcs=";
     };
-    date = "2023-09-21";
+    date = "2023-11-06";
   };
   cl-hash-util = {
     pname = "cl-hash-util";
@@ -175,16 +175,16 @@
   };
   dbus = {
     pname = "dbus";
-    version = "f4d1a99cfb38ded33f4fb58bb5522815f530b3c3";
+    version = "8bba6a0942232e9d7fa915b33bbe32dfedc5abb9";
     src = fetchgit {
       url = "https://github.com/death/dbus";
-      rev = "f4d1a99cfb38ded33f4fb58bb5522815f530b3c3";
+      rev = "8bba6a0942232e9d7fa915b33bbe32dfedc5abb9";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-SnjJfvQtsWMgHl8EZFhhv8NtMXRi8lCXiN7kg0kghb8=";
+      sha256 = "sha256-xbg3tPYfRNGJo+9F/58w2bDeZqV33Z871+ClSg4ACPk=";
     };
-    date = "2020-06-03";
+    date = "2023-11-04";
   };
   dbus-listen = {
     pname = "dbus-listen";
@@ -260,16 +260,16 @@
   };
   gitea-tea = {
     pname = "gitea-tea";
-    version = "5beb5bf56b9efc25b478f6d089e5e120717d615d";
+    version = "649b0b12726aaf9cec2b4ba3f5f6a1fdd2552d3c";
     src = fetchgit {
       url = "https://gitea.com/gitea/tea";
-      rev = "5beb5bf56b9efc25b478f6d089e5e120717d615d";
+      rev = "649b0b12726aaf9cec2b4ba3f5f6a1fdd2552d3c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-xcoWTwTD9DSVCoLRG7wXSo7kYwtKOgBE1TI83AxlqtI=";
+      sha256 = "sha256-91FPFlgeN/e2Srh5zbn1lMt1dgjtiyFAZ7hoVs28jXs=";
     };
-    date = "2023-10-06";
+    date = "2023-11-09";
   };
   gpg-hd = {
     pname = "gpg-hd";
@@ -293,16 +293,16 @@
   };
   ipxe = {
     pname = "ipxe";
-    version = "ff0f860483e344f1af633f94696ff7bc1854611f";
+    version = "77b07ea4fdc259d7253c6f9df2beda6e6c7a9d85";
     src = fetchgit {
       url = "https://github.com/ipxe/ipxe";
-      rev = "ff0f860483e344f1af633f94696ff7bc1854611f";
+      rev = "77b07ea4fdc259d7253c6f9df2beda6e6c7a9d85";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-6Vq6luFFNt7hIjaL8rB44t6mdxXKEpvOiza0E1Ka9pI=";
+      sha256 = "sha256-oVN0cFEMqzMAKf6OUuE0SYrMnwt3otN1RfuzqF8x8E0=";
     };
-    date = "2023-10-06";
+    date = "2023-11-07";
   };
   kea-ma = {
     pname = "kea-ma";
@@ -314,10 +314,10 @@
   };
   langchain = {
     pname = "langchain";
-    version = "0.0.316";
+    version = "0.0.332";
     src = fetchurl {
-      url = "https://pypi.org/packages/source/l/langchain/langchain-0.0.316.tar.gz";
-      sha256 = "sha256-cyyVjUHiKlu1X4wMtwkUeT8IPRdXOdR25cu8dxVwMVM=";
+      url = "https://pypi.org/packages/source/l/langchain/langchain-0.0.332.tar.gz";
+      sha256 = "sha256-g1a2wAc2gNZtXuLZ5UwjyQGY7nSrJDGgJWk0pppRHB8=";
     };
   };
   ledger-live-desktop = {
@@ -342,10 +342,10 @@
   };
   logseq = {
     pname = "logseq";
-    version = "0.9.19";
+    version = "0.9.20";
     src = fetchurl {
-      url = "https://github.com/logseq/logseq/releases/download/0.9.19/logseq-linux-x64-0.9.19.AppImage";
-      sha256 = "sha256-Y3AeeJc+PYJdckpOma5ZDbVtBbjBTfNNDqTip4l02/E=";
+      url = "https://github.com/logseq/logseq/releases/download/0.9.20/logseq-linux-x64-0.9.20.AppImage";
+      sha256 = "sha256-iT0Gc/ePx1tUNTPoE2Ol+dHUmbS4CkneZbyraRBx5Ak=";
     };
   };
   lorri = {
@@ -518,24 +518,24 @@
   };
   pbkdf2-sha512 = {
     pname = "pbkdf2-sha512";
-    version = "a1d1619830fd553c5af4599ceacc5dbe8d9b495a";
+    version = "b4fa671f99aa0fb19748d4be4a9326ac03149c60";
     src = fetchurl {
       url = "https://raw.githubusercontent.com/NixOS/nixpkgs/master/nixos/modules/system/boot/pbkdf2-sha512.c";
       sha256 = "sha256-OelyIsDDto6Ir22YY/UM+r9EBx6K8TNdjM3efzUJxE8=";
     };
-    date = "2023-10-18";
+    date = "2023-11-09";
   };
   promnesia = {
     pname = "promnesia";
-    version = "9ff734e6fde9ee42f9e8f895d1de54ee02e95d78";
+    version = "b812fe7679b3970efc1586d617f30b9b1fd4b2de";
     src = fetchFromGitHub {
       owner = "karlicoss";
       repo = "promnesia";
-      rev = "9ff734e6fde9ee42f9e8f895d1de54ee02e95d78";
+      rev = "b812fe7679b3970efc1586d617f30b9b1fd4b2de";
       fetchSubmodules = false;
-      sha256 = "sha256-TmLyHqa25I6NoTPsmd1AesYdxc8hmGPHdiMuFfw78uQ=";
+      sha256 = "sha256-lkz7yPriPGVct0iKI/FT3htDJaSQReHndjijKG2zhh4=";
     };
-    date = "2023-10-16";
+    date = "2023-11-08";
   };
   quicklisp = {
     pname = "quicklisp";
@@ -677,15 +677,15 @@
   };
   stumpwm-contrib = {
     pname = "stumpwm-contrib";
-    version = "36f43af312a22ca5d93ff3030089354c0c5b573c";
+    version = "54dfbeb553ad68272163c520655b6a4af4ad0430";
     src = fetchFromGitHub {
       owner = "stumpwm";
       repo = "stumpwm-contrib";
-      rev = "36f43af312a22ca5d93ff3030089354c0c5b573c";
+      rev = "54dfbeb553ad68272163c520655b6a4af4ad0430";
       fetchSubmodules = false;
-      sha256 = "sha256-g3Dc/miFKB4w8mgd7JT45EDPQXL8eag9f/ppq0cifNs=";
+      sha256 = "sha256-kaI6B3TWSRBlVtzO4MZAJC08Xo6206J0MuTyKglaAqQ=";
     };
-    date = "2023-09-07";
+    date = "2023-10-26";
   };
   stumpwm-git = {
     pname = "stumpwm-git";
@@ -769,35 +769,16 @@
   };
   zero-ui = {
     pname = "zero-ui";
-    version = "213c9499f2cabda1706225750f40dab64d5297a0";
+    version = "6f7bc6c2c202e2b1b312b6ce75aeccdbe2f5ea41";
     src = fetchgit {
       url = "https://github.com/dec0dOS/zero-ui";
-      rev = "213c9499f2cabda1706225750f40dab64d5297a0";
+      rev = "6f7bc6c2c202e2b1b312b6ce75aeccdbe2f5ea41";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-5PnbfGcIbFYTfQlBics6qUUxbOVAVM1wxCGs8OHkjss=";
+      sha256 = "sha256-YPqnRYCSRIDnGWV5BhPwv35D0pXpbBEfgXocn+gGtVI=";
     };
-    date = "2023-10-16";
-  };
-  zeronsd = {
-    pname = "zeronsd";
-    version = "6105c6d565ae4d6c371f631e688b28ff9066077a";
-    src = fetchFromGitHub {
-      owner = "voobscout";
-      repo = "zeronsd";
-      rev = "6105c6d565ae4d6c371f631e688b28ff9066077a";
-      fetchSubmodules = false;
-      sha256 = "sha256-CYMaZ8mL4S+kDpS5baEc3AzyfctIzZgyL87Ps1ekclk=";
-    };
-    cargoLock."Cargo.lock" = {
-      lockFile = ./zeronsd-6105c6d565ae4d6c371f631e688b28ff9066077a/Cargo.lock;
-      outputHashes = {
-        
-      };
-    };
-    cargoSha256 = "0000000000000000000000000000000000000000000000000000";
-    date = "2022-10-30";
+    date = "2023-10-25";
   };
   zsh-plugin_aw-watcher-shell = {
     pname = "zsh-plugin_aw-watcher-shell";
@@ -814,16 +795,16 @@
   };
   zsh-plugin_clipboard = {
     pname = "zsh-plugin_clipboard";
-    version = "7fbd15150fe0fc84a34b6aa9e31c5589de3c9ffc";
+    version = "354a4e493da5736d19d14e7769d98f357eff7323";
     src = fetchgit {
       url = "https://github.com/zpm-zsh/clipboard";
-      rev = "7fbd15150fe0fc84a34b6aa9e31c5589de3c9ffc";
+      rev = "354a4e493da5736d19d14e7769d98f357eff7323";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-BaYYzl6JArfPWASJtzk44scGejwgyT5+W94ugVDCV3I=";
+      sha256 = "sha256-GDWxib4k2vwfSZ/R5fyXRx6piOYPzJ1hyzCNOg7QqxU=";
     };
-    date = "2022-06-24";
+    date = "2023-11-05";
   };
   zsh-plugin_k = {
     pname = "zsh-plugin_k";
@@ -840,16 +821,16 @@
   };
   zsh-plugin_oh-my-zsh = {
     pname = "zsh-plugin_oh-my-zsh";
-    version = "d3112d67a3eb55fc39975f917467704ebb2c296b";
+    version = "b6bb133f230847ed0b3f9f4e25f2ceb874ca6c91";
     src = fetchgit {
       url = "https://github.com/robbyrussell/oh-my-zsh";
-      rev = "d3112d67a3eb55fc39975f917467704ebb2c296b";
+      rev = "b6bb133f230847ed0b3f9f4e25f2ceb874ca6c91";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-Gwr0acoJ2ab+Dyww8cudB+J/lSSgpP8jnBpuCdGUtfA=";
+      sha256 = "sha256-H6vTV97MGAadLhGMX5agqsle/cgLjLE1DANMd+TI4VE=";
     };
-    date = "2023-10-18";
+    date = "2023-11-08";
   };
   zsh-plugin_tipz = {
     pname = "zsh-plugin_tipz";
@@ -905,42 +886,42 @@
   };
   zsh-plugin_zsh-completions = {
     pname = "zsh-plugin_zsh-completions";
-    version = "7f84cdaf9c64001509860004ee8b4cd6b3074ba2";
+    version = "a0f027a1de9272d22ce20465d660d7b611f30cf0";
     src = fetchgit {
       url = "https://github.com/zsh-users/zsh-completions";
-      rev = "7f84cdaf9c64001509860004ee8b4cd6b3074ba2";
+      rev = "a0f027a1de9272d22ce20465d660d7b611f30cf0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-G9OQU1s1DGMUignz+XvOy/gOHLLlLGg+E+6qG+e+slA=";
+      sha256 = "sha256-cxA+WH/dKk00s6HVN+w1sh/1skHvH4Ji+3rLSSNQGJU=";
     };
-    date = "2023-10-18";
+    date = "2023-10-26";
   };
   zsh-plugin_zsh-history-substring-search = {
     pname = "zsh-plugin_zsh-history-substring-search";
-    version = "400e58a87f72ecec14f783fbd29bc6be4ff1641c";
+    version = "19b887667a155befeb5850f0af46a45cc5311ae2";
     src = fetchgit {
       url = "https://github.com/zsh-users/zsh-history-substring-search";
-      rev = "400e58a87f72ecec14f783fbd29bc6be4ff1641c";
+      rev = "19b887667a155befeb5850f0af46a45cc5311ae2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-GSEvgvgWi1rrsgikTzDXokHTROoyPRlU0FVpAoEmXG4=";
+      sha256 = "sha256-uv7yThQQN8LRqmEebhVblJ1VlClAd698xkYGpsZSkKc=";
     };
-    date = "2023-01-03";
+    date = "2023-11-08";
   };
   zsh-plugin_zsh-syntax-highlighting = {
     pname = "zsh-plugin_zsh-syntax-highlighting";
-    version = "143b25eb98aa3227af63bd7f04413e1b3e7888ec";
+    version = "bb27265aeeb0a22fb77f1275118a5edba260ec47";
     src = fetchgit {
       url = "https://github.com/zsh-users/zsh-syntax-highlighting";
-      rev = "143b25eb98aa3227af63bd7f04413e1b3e7888ec";
+      rev = "bb27265aeeb0a22fb77f1275118a5edba260ec47";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
-      sha256 = "sha256-gV8KmNKwrdFjB8wOqHZT0sWE8OdeqOsbjsRtrLTNSF8=";
+      sha256 = "sha256-psIOBZnrANu1Gzce5oc0T1IO2vuIhHIFTyl/wJUGsm0=";
     };
-    date = "2023-09-05";
+    date = "2023-10-29";
   };
   ztncui = {
     pname = "ztncui";

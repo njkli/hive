@@ -41,7 +41,7 @@ in
 
   home.packages = with pkgs; [ tigervnc jekyll vultr-cli virt-manager ];
 
-  # FIXME: programs.activitywatch.enable = true;
+  programs.activitywatch.enable = true;
 
   xdg.userDirs.extraConfig.XDG_PROJ_DIR = "$HOME/Projects";
   home.sessionVariables.XDG_PROJ_DIR = "$HOME/Projects";

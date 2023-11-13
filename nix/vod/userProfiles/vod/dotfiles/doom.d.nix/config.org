@@ -624,6 +624,45 @@ This fails to build on nix currently
          ("TAB" . 'copilot-accept-completion)))
 #+end_src
 
+*** lsp-bridge
+#+begin_src emacs-lisp :tangle "packages.el"
+;; (package! posframe)
+;; (package! popon)
+;; (package! lsp-bridge :recipe (:files ("*.el" "*.py" "core" "langserver" "acm")
+;;                               :build (:not compile)))
+#+end_src
+
+
+#+begin_src emacs-lisp :tangle "config.el"
+;; (use-package lsp-bridge
+;;   :init
+;;   (setq lsp-bridge-flash-line-delay 1
+;;         lsp-bridge-ref-flash-line-delay 1
+;;         lsp-bridge-use-ds-pinyin-in-org-mode t
+;;         acm-enable-tabnine-helper t
+;;         lsp-bridge-python-lsp-server "pylsp"
+;;         lsp-bridge-python-command "/run/current-system/sw/bin/python")
+;;   (setq lsp-bridge-org-babel-lang-list '("go" "python" "ipython"
+;;                                          "ruby" "js" "css" "sass"
+;;                                          "jupyter" "c" "rust" "java" "cpp" "jupyter-python"
+;;                                          "c++" "sh"))
+;;   :hook (doom-first-input . global-lsp-bridge-mode)
+;;   :config
+;;   ;; (add-hook 'lsp-bridge-mode-hook '(lambda () (company-mode -1)
+;;   ;;                                   ))
+;;   (push '((nickel-mode nickel-ts-mode) . "nls") lsp-bridge-single-lang-server-mode-list)
+;;   (push '((nix-mode nix-ts-mode) . "rnix-lsp") lsp-bridge-single-lang-server-mode-list)
+;;   (setq acm-candidate-match-function 'orderless-flex))
+;; (after! lsp-bridge
+;;      (set-face-background 'acm-frame-default-face (face-attribute 'default :background))
+;;       (set-face-background 'acm-frame-select-face (face-attribute 'highlight :background))
+;;       (set-face-foreground 'acm-frame-select-face (face-attribute 'highlight :foreground))
+;;         )
+#+end_src
+
+#+RESULTS:
+| global-lsp-bridge-mode |
+
 ** color-rg
 
 #+begin_src emacs-lisp :tangle packages.el

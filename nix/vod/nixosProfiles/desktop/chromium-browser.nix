@@ -1,7 +1,9 @@
 { inputs, cell, ... }:
 
 { lib, config, ... }:
+# let
 
+# in
 lib.mkMerge [
   {
     programs.chromium.enable = true;
@@ -11,6 +13,8 @@ lib.mkMerge [
     programs.chromium.extensions = [
       # "nglaklhklhcoonedhgnpgddginnjdadi" # TODO: mkIf hmModule activitywatch enabled.
       "nkbihfbeogaeaoehlefnkodbefgpgknn" # metamask
+      # "jpefmbpcbebpjpmelobfakahfdcgcmkl" # adblock for youtube
+      "maekfnoeejhpjfkfmdlckioggdcdofpg" # Adblocker for Youtube™
       # "kbbdabhdfibnancpjfhlkhafgdilcnji" # Screenity
       # "kkkjlfejijcjgjllecmnejhogpbcigdc" # org-capture
       # "kdmegllpofldcpaclldkopnnjjljoiio" # promnesia
@@ -22,6 +26,7 @@ lib.mkMerge [
       ###
       # "ellkdbaphhldpeajbepobaecooaoafpg" # fetchai-network-wallet
     ];
+    # ++ (lib.mkIf false [ "nglaklhklhcoonedhgnpgddginnjdadi" ]);
 
     # NOTE: https://chromeenterprise.google/policies/
     programs.chromium.extraOpts = {

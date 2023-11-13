@@ -76,6 +76,23 @@ in
     #   ename = "activity-watch-mode";
     #   packageRequires = with self; [ request cl-lib ];
     # };
+    /*
+      (require 'cl-lib)
+      (require 'json)
+      (require 'map)
+      (require 'seq)
+      (require 'subr-x)
+      (require 'markdown-mode)
+      (require 'diff)
+
+    */
+    lsp-bridge = self.trivialBuild {
+      inherit (pkgs.sources.lsp-bridge) pname version src;
+      ename = "lsp-bridge";
+      buildInputs = with pkgs.python3Packages; [ epc orjson sexpdata six paramiko rapidfuzz ];
+      packageRequires = with self; [ self.map markdown-mode ] ++
+        (with pkgs.python3Packages; [ epc orjson sexpdata six paramiko rapidfuzz ]);
+    };
 
     copilot = self.trivialBuild {
       inherit (pkgs.sources.copilot-el) pname version src;

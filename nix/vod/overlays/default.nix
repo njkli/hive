@@ -21,8 +21,6 @@ let
     (pkgsWithVscodeExtensions.lib.vscode-utils.builders.default
       { srcs = (filterAttrs (k: v: v ? publisher) final.sources.vscode-extensions); });
 
-  # listToAttrs ( attrValues (filterAttrs (k: v: k != "override" && k != "overrideDerivation") firefox-addons))
-
   firefox-addons =
     (mapAttrs
       (_: v:

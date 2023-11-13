@@ -78,10 +78,21 @@
   # individual inputs
   inputs = {
     nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
-    # nix-doom-emacs.inputs.nixpkgs.follows = "nixos";
 
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
-    emacs-overlay.inputs.nixpkgs.follows = "nixos";
+    # NOTE: https://github.com/nix-community/nix-straight.el/pull/4
+    nix-doom-emacs.inputs.nix-straight.follows = "nix-straight-fix-emacs29";
+    # nix-doom-emacs.inputs.emacs-overlay.follows = "emacs-overlay";
+
+    nix-straight-fix-emacs29.url = "github:nix-community/nix-straight.el?ref=pull/4/head";
+    nix-straight-fix-emacs29.flake = false;
+    #
+
+    # emacs-overlay.url = "github:nix-community/emacs-overlay";
+    # emacs-overlay.inputs.nixpkgs.follows = "nixos";
+
+    # emacs-overlay.follows = "nix-doom-emacs.inputs.emacs-overlay";
+    emacs-overlay.url = "github:nix-community/emacs-overlay/c16be6de78ea878aedd0292aa5d4a1ee0a5da501";
+
   };
 
   outputs =

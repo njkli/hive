@@ -1,7 +1,7 @@
 { pkgs, profiles, ... }:
 let
   # vodEmacsPkg = pkgs.emacs;
-  vodEmacsPkg = pkgs.emacs; #29-gtk3;
+  vodEmacsPkg = pkgs.emacs29; #29-gtk3;
   vodEmacsExtraPkgs =
     let
       emacsPackages = pkgs.emacsPackagesFor vodEmacsPkg;
@@ -58,6 +58,14 @@ in
   programs.doom-emacs.extraPackages = vodEmacsExtraPkgs;
   programs.doom-emacs.doomPrivateDir = pkgs.callPackage ../dotfiles/doom.d.nix { };
   programs.doom-emacs.emacsPackagesOverlay = self: super: {
+
+    vterm = super.vterm.overrideAttrs (oldAttrs: {
+      cmakeFlags = [
+        "-DEMACS_SOURCE=${vodEmacsPkg.src}"
+        "-DUSE_SYSTEM_LIBVTERM=ON"
+      ];
+    });
+
     org-pretty-table = self.trivialBuild {
       inherit (pkgs.sources.org-pretty-table) pname version src;
       ename = "org-pretty-table";

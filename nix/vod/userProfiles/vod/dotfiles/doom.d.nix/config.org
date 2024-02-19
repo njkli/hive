@@ -610,36 +610,41 @@ helm-swoop can be replaced by (package! ctrlf :recipe (:host github :repo "raxod
 *** Github copilot
 This fails to build on nix currently
 #+begin_src emacs-lisp :tangle packages.el
-(package! copilot)
+;; (package! copilot)
 #+end_src
 
 #+begin_src emacs-lisp :tangle config.el
-(use-package! copilot
-  :config (setq copilot--base-dir (getenv "EMACS_PATH_COPILOT"))
-  :hook (prog-mode . copilot-mode)
-  :bind (("C-TAB" . 'copilot-accept-completion-by-word)
-         ("C-<tab>" . 'copilot-accept-completion-by-word)
-         :map copilot-completion-map
-         ("<tab>" . 'copilot-accept-completion)
-         ("TAB" . 'copilot-accept-completion)))
+;; (use-package! copilot
+;;   :config (setq copilot--base-dir (getenv "EMACS_PATH_COPILOT"))
+;;   :hook (prog-mode . copilot-mode)
+;;   :bind (("C-TAB" . 'copilot-accept-completion-by-word)
+;;          ("C-<tab>" . 'copilot-accept-completion-by-word)
+;;          :map copilot-completion-map
+;;          ("<tab>" . 'copilot-accept-completion)
+;;          ("TAB" . 'copilot-accept-completion)))
 #+end_src
 
 *** lsp-bridge
 #+begin_src emacs-lisp :tangle "packages.el"
+;; (disable-packages! tree-sitter-langs)
+;; (disable-packages! doom-snippets)
+#+end_src
+
+#+begin_src emacs-lisp :tangle "packages.el"
 ;; (package! posframe)
 ;; (package! popon)
 ;; (package! lsp-bridge :recipe (:files ("*.el" "*.py" "core" "langserver" "acm")
-;;                               :build (:not compile)))
+;;                              :build (:not compile)))
 #+end_src
 
 
 #+begin_src emacs-lisp :tangle "config.el"
-;; (use-package lsp-bridge
+;; (use-package! lsp-bridge
 ;;   :init
 ;;   (setq lsp-bridge-flash-line-delay 1
 ;;         lsp-bridge-ref-flash-line-delay 1
 ;;         lsp-bridge-use-ds-pinyin-in-org-mode t
-;;         acm-enable-tabnine-helper t
+;;         ;; acm-enable-tabnine-helper t
 ;;         lsp-bridge-python-lsp-server "pylsp"
 ;;         lsp-bridge-python-command "/run/current-system/sw/bin/python")
 ;;   (setq lsp-bridge-org-babel-lang-list '("go" "python" "ipython"
@@ -650,18 +655,24 @@ This fails to build on nix currently
 ;;   :config
 ;;   ;; (add-hook 'lsp-bridge-mode-hook '(lambda () (company-mode -1)
 ;;   ;;                                   ))
-;;   (push '((nickel-mode nickel-ts-mode) . "nls") lsp-bridge-single-lang-server-mode-list)
-;;   (push '((nix-mode nix-ts-mode) . "rnix-lsp") lsp-bridge-single-lang-server-mode-list)
+;;   ;;(push '((nickel-mode nickel-ts-mode) . "nls") lsp-bridge-single-lang-server-mode-list)
+;;   (push '((nix-mode nix-ts-mode) . "nixd") lsp-bridge-single-lang-server-mode-list)
 ;;   (setq acm-candidate-match-function 'orderless-flex))
 ;; (after! lsp-bridge
 ;;      (set-face-background 'acm-frame-default-face (face-attribute 'default :background))
 ;;       (set-face-background 'acm-frame-select-face (face-attribute 'highlight :background))
-;;       (set-face-foreground 'acm-frame-select-face (face-attribute 'highlight :foreground))
-;;         )
+;;       (set-face-foreground 'acm-frame-select-face (face-attribute 'highlight :foreground)))
 #+end_src
 
-#+RESULTS:
-| global-lsp-bridge-mode |
+#+begin_src emacs-lisp :tangle "packages.el"
+;; (package! nix-ts-mode)
+#+end_src
+
+#+begin_src emacs-lisp :tangle "config.el"
+;; (unless (display-graphic-p)
+;;   (after! acm
+;;     (use-package! acm-terminal)))
+#+end_src
 
 ** color-rg
 
@@ -683,6 +694,7 @@ This fails to build on nix currently
 #+begin_src emacs-lisp :tangle config.el
 (setq +snippets-dir (getenv "EMACS_PATH_SNIPPETS_DIR"))
 #+end_src
+
 * Language support
 ** Indent Guides
 

@@ -51,6 +51,7 @@
       disko.devices = cell.diskoConfigurations.oglaroon { inherit lib; };
       imports =
         [
+          # TODO: cell.nixosProfiles.hardware.rtw89
           cell.nixosProfiles.zfs
           inputs.cells.filesystems.nixosProfiles.impermanence.default
           inputs.cells.hardware.nixosProfiles.amd

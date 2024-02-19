@@ -94,12 +94,11 @@ in
       (require 'diff)
 
     */
-    lsp-bridge = self.trivialBuild {
+    lsp-bridge = self.trivialBuild rec {
       inherit (pkgs.sources.lsp-bridge) pname version src;
       ename = "lsp-bridge";
-      buildInputs = with pkgs.python3Packages; [ epc orjson sexpdata six paramiko rapidfuzz ];
-      packageRequires = with self; [ self.map markdown-mode ] ++
-        (with pkgs.python3Packages; [ epc orjson sexpdata six paramiko rapidfuzz ]);
+      buildInputs = with pkgs.python3Packages; [ epc orjson sexpdata six setuptools paramiko rapidfuzz ];
+      packageRequires = with self; [ self.map markdown-mode ] ++ buildInputs;
     };
 
     copilot = self.trivialBuild {
@@ -115,10 +114,10 @@ in
       buildInputs = with pkgs; [ ripgrep ];
     };
 
-    # nix-mode = self.trivialBuild {
-    #   inherit (pkgs.sources.nix-mode) src pname ename version;
-    #   packageRequires = with self; [ emacs magit-section transient mmm-mode company ];
-    # };
+    nix-ts-mode = self.trivialBuild {
+      inherit (pkgs.sources.nix-ts-mode) src pname version;
+      # packageRequires = with self; [ emacs magit-section transient mmm-mode company ];
+    };
   };
 
   home.sessionVariables.EMACS_PATH_COPILOT = "${pkgs.sources.copilot-el.src}";

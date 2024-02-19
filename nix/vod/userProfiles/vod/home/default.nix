@@ -16,6 +16,7 @@ in
       profiles.pentester.traffic
       profiles.security.keybase
       profiles.security.password-store
+      # TODO: profiles.activitywatch
     ] ++
     (with profiles.look-and-feel;
     [
@@ -39,7 +40,7 @@ in
       ballerina # NOTE: currently only java support
     ]);
 
-  home.packages = with pkgs; [ tigervnc jekyll vultr-cli virt-manager ];
+  home.packages = with pkgs; [ tigervnc jekyll vultr-cli virt-manager sops ];
 
   programs.activitywatch.enable = true;
 

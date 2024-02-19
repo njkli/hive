@@ -68,6 +68,9 @@ in
         programs.promnesia
         programs.chemacs
         programs.activitywatch
-      ]);
+      ]) ++
+      [
+        # "${inputs.home-activitywatch}/modules/services/activitywatch.nix"
+      ];
   };
 }

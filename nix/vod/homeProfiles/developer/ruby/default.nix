@@ -15,9 +15,8 @@ mkMerge [
   (mkIf config.programs.vscode.enable
     {
       programs.vscode.extensions = with pkgs.vscode-extensions; [
-        ruby
-        vscode-ruby
-        solargraph
+        ruby-lsp
+        # solargraph
         rails-snippets
         ruby-rubocop
         simple-ruby-erb

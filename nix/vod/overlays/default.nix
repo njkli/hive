@@ -76,6 +76,7 @@ in
   inherit (__inputs__.nixpkgs-hardenedlinux.packages) gptcommit;
 
   inherit (ourPkgs)
+    # rtw89
     # git-get
     shflags
     shellspec

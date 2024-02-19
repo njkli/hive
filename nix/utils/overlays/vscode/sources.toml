@@ -100,6 +100,12 @@ src.vsmarketplace = "WSO2.ballerina"
 fetch.vsmarketplace = "WSO2.ballerina"
 passthru = { publisher = "WSO2", name = "ballerina"}
 
+#
+[codium]
+src.vsmarketplace = "Codium.codium"
+fetch.vsmarketplace = "Codium.codium"
+passthru = { publisher = "Codium", name = "codium"}
+
 [copilot]
 src.vsmarketplace = "GitHub.copilot"
 fetch.vsmarketplace = "GitHub.copilot"
@@ -189,15 +195,20 @@ src.vsmarketplace = "ms-azuretools.vscode-docker"
 fetch.vsmarketplace = "ms-azuretools.vscode-docker"
 passthru = { publisher = "ms-azuretools", name = "vscode-docker"}
 
-[Ruby]
-src.vsmarketplace = "rebornix.Ruby"
-fetch.vsmarketplace ="rebornix.Ruby"
-passthru = { publisher = "rebornix", name = "Ruby"}
+[ruby-lsp]
+src.vsmarketplace = "Shopify.ruby-lsp"
+fetch.vsmarketplace ="Shopify.ruby-lsp"
+passthru = { publisher = "Shopify", name = "ruby-lsp"}
 
-[vscode-ruby]
-src.vsmarketplace = "wingrunr21.vscode-ruby"
-fetch.vsmarketplace = "wingrunr21.vscode-ruby"
-passthru = { publisher = "wingrunr21", name = "vscode-ruby"}
+# [Ruby]
+# src.vsmarketplace = "rebornix.Ruby"
+# fetch.vsmarketplace ="rebornix.Ruby"
+# passthru = { publisher = "rebornix", name = "Ruby"}
+
+# [vscode-ruby]
+# src.vsmarketplace = "wingrunr21.vscode-ruby"
+# fetch.vsmarketplace = "wingrunr21.vscode-ruby"
+# passthru = { publisher = "wingrunr21", name = "vscode-ruby"}
 
 [solargraph]
 src.vsmarketplace = "castwide.solargraph"
@@ -280,7 +291,7 @@ src.vsmarketplace = "jnoortheen.nix-ide"
 fetch.vsmarketplace = "jnoortheen.nix-ide"
 passthru = { publisher = "jnoortheen", name = "nix-ide"}
 
-[even-better-toml]
-src.vsmarketplace = "tamasfe.even-better-toml"
-fetch.vsmarketplace = "tamasfe.even-better-toml"
-passthru = { publisher = "tamasfe", name = "even-better-toml"}
+# [even-better-toml]
+# src.vsmarketplace = "tamasfe.even-better-toml"
+# fetch.vsmarketplace = "tamasfe.even-better-toml"
+# passthru = { publisher = "tamasfe", name = "even-better-toml"}

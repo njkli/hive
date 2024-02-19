@@ -34,7 +34,13 @@ in
 final: prev: {
   inherit (nixos-unstable-linux_6_2) linuxPackages_6_2;
   inherit (nixos-unstable-linux_6_5) linuxPackages_6_5;
-  inherit (nixpkgs-unstable-latest) activitywatch nyxt;
+  inherit (nixpkgs-unstable-latest)
+    activitywatch
+    nyxt
+    keybase
+    keybase-gui
+    kbfs
+    ;
   # inherit (nixpkgs-22-11) nyxt;
 
   inherit (nixpkgs-master.nodePackages)
@@ -59,10 +65,6 @@ final: prev: {
     age
     ssh-to-age
     step-ca step-cli
-    #
-    keybase
-    keybase-gui
-    kbfs
     #
     starship
     xml2
@@ -174,4 +176,9 @@ final: prev: {
   python3Override = nixpkgs-master.python3;
   makeDesktopItem = final.make-desktopitem;
   xorg_cvt = nixpkgs-22-11.xorg.xorgserver;
+  # rustPlatform = prev.makeRustPlatform {
+  #   # inherit (final.rust-bin.stable.latest) cargo rustc;
+  #   cargo = final.rust-bin.stable.latest.cargo;
+  #   rustc = final.rust-bin.stable.latest.rustc // { meta.platforms = [ final.rust-bin.stable.latest.rustc.platform ]; };
+  # };
 }

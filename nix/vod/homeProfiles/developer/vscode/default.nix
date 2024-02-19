@@ -19,11 +19,11 @@ mkMerge [
       multi-cursor-case-preserve
 
       haml
-      even-better-toml
+      # even-better-toml
       vscode-markdownlint
       markdown-preview-enhanced
 
-      copilot
+      # copilot
       # NOTE: pdf <- needs some kind of js lib probably
       activitywatch
     ];
@@ -44,18 +44,18 @@ mkMerge [
       "editor.quickSuggestions".strings = true;
       "editor.formatOnPaste" = true;
 
-      "github.copilot.enable" = {
-        "*" = true;
-        "plaintext" = false;
-        "markdown" = false;
-        "Nix" = true;
-      };
+      # "github.copilot.enable" = {
+      #   "*" = true;
+      #   "plaintext" = false;
+      #   "markdown" = false;
+      #   "Nix" = true;
+      # };
 
       # FIXME/TODO: https://beta.openai.com/docs/api-reference/completions/create#classifications/create-temperature
-      "github.copilot.advanced" = {
-        temperature = 0.8;
-        # top_p = 0.1;
-      };
+      # "github.copilot.advanced" = {
+      #   temperature = 0.8;
+      #   # top_p = 0.1;
+      # };
     };
 
     # NOTE: Otherwise inode/directory will open with vscode

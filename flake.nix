@@ -40,6 +40,8 @@
     arion.inputs.nixpkgs.follows = "nixpkgs";
 
     nur.url = "github:nix-community/NUR";
+    nurl.url = "github:nix-community/nurl";
+    rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
   # nixpkgs & home-manager
@@ -50,7 +52,7 @@
     nixpkgs.follows = "nixpkgs-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
-    nixpkgs-unstable-latest.url = "github:nixos/nixpkgs/ec750fd01963ab6b20ee1f0cb488754e8036d89d";
+    nixpkgs-unstable-latest.url = "github:nixos/nixpkgs/045b51a3ae66f673ed44b5bbd1f4a341d96703bf";
 
     nixpkgs-master.url = "github:nixos/nixpkgs";
 
@@ -71,8 +73,9 @@
     # FIXME: upgrade everything and remove the home-manager with activitywatch pull request
     home-activitywatch.url = "github:nix-community/home-manager?ref=pull/4429/head";
 
-    home.url = "github:nix-community/home-manager";
-    home.inputs.nixpkgs.follows = "nixos";
+    # FIXME: after updating stuff, remove the pin on home-manager
+    home.url = "github:nix-community/home-manager/607d8fad96436b134424b9935166a7cd0884003e";
+    home.inputs.nixpkgs.follows = "nixpkgs-unstable-latest";
   };
 
   # individual inputs
@@ -92,6 +95,10 @@
 
     # emacs-overlay.follows = "nix-doom-emacs.inputs.emacs-overlay";
     emacs-overlay.url = "github:nix-community/emacs-overlay/c16be6de78ea878aedd0292aa5d4a1ee0a5da501";
+
+    # LSP for nix
+    nil.url = "github:oxalica/nil";
+    nixd.url = "github:nix-community/nixd";
 
   };
 

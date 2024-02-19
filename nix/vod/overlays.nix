@@ -5,12 +5,19 @@ let inherit (inputs.cells.common.lib) __inputs__; in
     cell.overlays.default
     cell.overlays.python
     cell.overlays.overrides
+
     inputs.nur.overlay
+
+    inputs.nil.overlays.nil
+    inputs.nixd.overlays.default
 
     cell.overlays.masterpdfeditor
     # inputs.cells.utils.overlays.default
 
     cell.overlays.stumpwm
+
+    # inputs.rust-overlay.overlays.default
+    # inputs.nurl.overlays.default
 
     __inputs__.rust-overlay.overlays.default
     __inputs__.nixpkgs-wayland.overlays.default

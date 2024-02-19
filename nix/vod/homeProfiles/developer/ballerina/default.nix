@@ -10,6 +10,6 @@ mkMerge [
   }
 
   (mkIf config.programs.vscode.enable {
-    programs.vscode.extensions = with pkgs.vscode-extensions; [ ballerina ];
+    # FIXME: programs.vscode.extensions = with pkgs.vscode-extensions; [ ballerina ];
   })
 ]

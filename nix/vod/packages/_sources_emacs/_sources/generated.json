@@ -155,7 +155,7 @@
     },
     "lsp-bridge": {
         "cargoLocks": null,
-        "date": "2023-11-12",
+        "date": "2023-11-15",
         "extract": null,
         "name": "lsp-bridge",
         "passthru": null,
@@ -167,11 +167,11 @@
             "name": null,
             "owner": "manateelazycat",
             "repo": "lsp-bridge",
-            "rev": "49053b9f0b4264a5e64a6e23bbe08d37c476e949",
-            "sha256": "sha256-h1RP8ZTBDZ4aiCcFfhK+mx8Uj9IFS++/zEKUS++xYok=",
+            "rev": "d91c75a87b8153075c803f7502d009ead6d5d897",
+            "sha256": "sha256-aW3dWk0rgWIEplAHcg51FqlK0Hu+m2/AtwXuFQOu6J8=",
             "type": "github"
         },
-        "version": "49053b9f0b4264a5e64a6e23bbe08d37c476e949"
+        "version": "d91c75a87b8153075c803f7502d009ead6d5d897"
     },
     "nix-mode": {
         "cargoLocks": null,
@@ -193,6 +193,26 @@
             "url": "https://github.com/NixOS/nix-mode"
         },
         "version": "719feb7868fb567ecfe5578f6119892c771ac5e5"
+    },
+    "nix-ts-mode": {
+        "cargoLocks": null,
+        "date": "2023-11-08",
+        "extract": null,
+        "name": "nix-ts-mode",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "remi-gelinas",
+            "repo": "nix-ts-mode",
+            "rev": "2dddc6e9ca33be211675afca3896fd661fc38a0c",
+            "sha256": "sha256-MGbkSqdImoIH/TIzMy5WHiS7sEb2NzOH+dqHTUg+9Kg=",
+            "type": "github"
+        },
+        "version": "2dddc6e9ca33be211675afca3896fd661fc38a0c"
     },
     "org-pretty-table": {
         "cargoLocks": null,

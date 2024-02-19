@@ -79,8 +79,8 @@ in
   # networking.extraHosts = lib.readFile "${pkgs.sources.StevenBlack-hosts.src}/alternates/fakenews-gambling-porn-social/hosts";
 
   services.adguardhome.enable = true;
-  services.adguardhome.host = "127.0.0.1";
-  services.adguardhome.port = 8888;
+  # services.adguardhome.host = "127.0.0.1";
+  # services.adguardhome.port = 8888;
   services.adguardhome.mutableSettings = false;
   services.adguardhome.settings = {
 

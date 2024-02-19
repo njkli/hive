@@ -116,7 +116,7 @@ lib.mkIf config.programs.zsh.enable
           "urltools"
           "transfer"
           "systemd"
-          "docker"
+          # Interferes with bundled completions "docker"
           "docker-compose"
           "rsync"
           "repo"

@@ -286,6 +286,10 @@ fetch.github = "lhope/cl-syslog"
 src.git = "https://github.com/RinCat/RTL88x2BU-Linux-Driver"
 fetch.github = "RinCat/RTL88x2BU-Linux-Driver"
 
+[rtw89]
+src.git = "https://github.com/lwfinger/rtw89"
+fetch.github = "lwfinger/rtw89"
+
 # hardware crypto stuff
 [paper-store]
 src.git = "https://github.com/nurupo/paper-store"
@@ -331,8 +335,8 @@ fetch.url = "https://code-industry.net/public/master-pdf-editor-$ver-qt5.x86_64.
 # "zdharma/fast-syntax-highlighting"
 #
 [zsh-plugin_aw-watcher-shell]
-src.git = "https://github.com/nickbradley/aw-watcher-shell"
-fetch.git = "https://github.com/nickbradley/aw-watcher-shell"
+src.git = "https://github.com/voobscout/aw-watcher-shell"
+fetch.git = "https://github.com/voobscout/aw-watcher-shell"
 
 [zsh-plugin_zsh-history-substring-search]
 src.git = "https://github.com/zsh-users/zsh-history-substring-search"

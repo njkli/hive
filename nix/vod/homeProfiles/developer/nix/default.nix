@@ -48,15 +48,43 @@ mkMerge [
 
   (mkIf config.programs.vscode.enable {
     programs.vscode.userSettings."nix.enableLanguageSupport" = true;
+    programs.vscode.userSettings."nix.formatterPath" = "alejandra";
+    programs.vscode.userSettings."nix.serverPath" = "nixd";
+    programs.vscode.userSettings."nix.serverSettings" = {
+      "nixd" = {
+        "eval" = { };
+        "formatting" = { "command" = "alejandra"; };
+        "options" = {
+          "enable" = true;
+          "target" = {
+            "args" = [ ];
+            "installable" = "<flakeref>#nixosConfigurations.<name>.options";
+            # "installable" = "<flakeref>#debug.options";
+            # "installable" = "<flakeref>#homeConfigurations.<name>.options";
+          };
+        };
+      };
+    };
+    # {
+    #   "nixd" = {
+    #     "formatting" = { "command" = "alejandra"; };
+    #     "options" = {
+    #       "enable" = true;
+    #       "target" = { "installable" = "<flakeref>#nixosConfigurations.<name>.options"; };
+    #     };
+    #   };
+    # };
+
     programs.vscode.extensions = with pkgs.vscode-extensions; [
-      nix-extension-pack
       nix-ide
+      # FIXME: [login issues] codium
     ];
   })
 
   {
     home.packages = with pkgs; [
       niv
+      nurl
       dconf2nix
       nix-bundle
       nix-diff
@@ -85,7 +113,10 @@ mkMerge [
       nixpkgs-review
       # NOTE: broken nix-linter
       cachix
+      # LSP
       rnix-lsp
+      nixd
+      alejandra
     ];
 
     services.lorri.enable = true;

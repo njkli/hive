@@ -33,7 +33,17 @@ rec {
         boot.kernelParams = lib.mkAfter [
           # NOTE: This machine has 64 Gigs RAM
           "zfs.zfs_arc_max=${toString (8 * 1024 * 1024 * 1024)}"
+          "nvme_core.default_ps_max_latency_us=0"
         ];
+      })
+      {
+        services.udev.extraRules = ''
+          # hidraw-based library for ledger devices
+          KERNEL=="hidraw*", ATTRS{idVendor}=="2c97", MODE="0666" OWNER="vod"
+        '';
+      }
+      ({ pkgs, ... }: {
+        environment.systemPackages = with pkgs; [ smartmontools nvme-cli ];
       })
       ({ pkgs, ... }:
         {

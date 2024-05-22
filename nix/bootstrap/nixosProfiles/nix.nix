@@ -20,7 +20,7 @@ in
   nix.nrBuildUsers = 0;
   nix.gc.automatic = true;
   nix.gc.dates = "weekly";
-  nix.gc.options = "--delete-older-than 3d";
+  nix.gc.options = "--delete-older-than 30d";
   nix.settings.nix-path = [ "nixpkgs=${pkgs.path}" ];
   nix.settings.allowed-users = [ "@wheel" ];
   nix.settings.trusted-users = [ "root" "@wheel" ];
